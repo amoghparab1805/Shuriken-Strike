@@ -1,2 +1,2 @@
-# Shuriken-Strike
-CSCI 526 Advance Game Console and Mobile Development | Game Project
+# sharkTank
+CSCI 526 (Spring 2022) | Game Development Project
