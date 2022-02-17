@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ResetBtn : MonoBehaviour
 {
     public void hello(){
-        Debug.Log("Hello World");
-        Application.LoadLevel(1);
+        Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void quit(){
+        SceneManager.LoadScene(0);
     }
 }
