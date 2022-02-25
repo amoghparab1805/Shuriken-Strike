@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,6 +7,7 @@ public class BlockManager : MonoBehaviour
 {
 
     public Block[] blockArray;
+    AsyncOperation levelLoading;
 
     int[] hitPoints={5,5,5,5};
 
@@ -19,7 +22,16 @@ public class BlockManager : MonoBehaviour
     }
 
     public void nextLevel(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        levelLoading = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        levelLoading.allowSceneActivation = false;
+        StartCoroutine(waitForNextLevel());
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    IEnumerator waitForNextLevel()
+    {
+        yield return new WaitForSeconds(2);
+        levelLoading.allowSceneActivation = true;
     }
 
     void subscribeToEvent() {
