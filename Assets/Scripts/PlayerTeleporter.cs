@@ -6,23 +6,20 @@ public class PlayerTeleporter : MonoBehaviour
 {
     private GameObject currentTeleporter;
     private float distance = 2f;
+    private bool canTeleport = true;
+    public Vector3 lv;
+    public Rigidbody2D rb;
     private void OnTriggerEnter2D(Collider2D other) {
-        // if(Vector2.Distance(transform.position, other.transform.position)<distance) {
-        //     Debug.Log("Distance "+Vector2.Distance(transform.position, other.transform.position));
-        //     Debug.Log("Player "+ transform.position);
-        //     Debug.Log("Collider "+ other.transform.position);
-        // }
-        if(other.CompareTag("Teleporter") && Vector2.Distance(transform.position, other.transform.position)>distance) {
+        if(other.CompareTag("Teleporter") && Vector2.Distance(transform.position, other.transform.position) > distance) {
             currentTeleporter = other.gameObject;
-            Debug.Log("Entering teleport object");
         }
-    //     currentTeleporter = null;
     }
 
     private void OnTriggerExit2D(Collider2D other) {
         
         if(other.CompareTag("Teleporter")){
             if(other.gameObject == currentTeleporter){
+                // Debug.Log("Cleaning up");
                 currentTeleporter = null;
 
             }
@@ -30,18 +27,30 @@ public class PlayerTeleporter : MonoBehaviour
     }
     void Update()
     {
-        if(currentTeleporter != null)
+        lv = rb.velocity;
+        if(currentTeleporter != null && canTeleport)
         {   
             StartCoroutine(Teleport());
-
+            StartCoroutine(waitForTeleport());
         }
     }
 
     IEnumerator Teleport()
     {
+        canTeleport = false;
+        Debug.Log(canTeleport);
+        var speed = lv.magnitude;
+        var direction = lv.normalized;
+        rb.velocity = -direction * Mathf.Max(speed, 0f);
         transform.position = currentTeleporter.GetComponent<Teleport>().getDestination().position;
         yield return new WaitForSeconds(2);
-        
+    }
+
+    IEnumerator waitForTeleport()
+    {
+        yield return new WaitForSeconds(1);
+        canTeleport = true;
+        Debug.Log(canTeleport);
     }
 
     

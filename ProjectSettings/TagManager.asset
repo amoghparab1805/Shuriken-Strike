@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Powerup
+  - Easy_Enemy
+  - Block
+  - Enemy
+  - Wall
+  - Teleporter
+  - obstacle
   layers:
   - Default
   - TransparentFX
@@ -40,4 +47,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 3443587407
+    locked: 0
+  - name: GameElements
+    uniqueID: 3964199599
     locked: 0

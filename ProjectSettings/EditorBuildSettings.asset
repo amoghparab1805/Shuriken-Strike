@@ -9,9 +9,27 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: daec3d4bdef4540c682c6023a1f663fe
   - enabled: 1
-    path: Assets/Scenes/LevelMovingEnemis.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Levels.unity
+    guid: b56b9edd86134494c9605e026f15b01f
   - enabled: 1
-    path: Assets/Scenes/LevelTeleport.unity
-    guid: de4192c9bde4345bf81a49a801cb6de5
+    path: Assets/Scenes/Level 1.unity
+    guid: e97a347cc733ff342a7cc61039726854
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: cb40c54b76dc1497a9e06205eec80ac2
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: 8f17e64b98fcd435da699d029f510376
+  - enabled: 1
+    path: Assets/Scenes/Level 4.unity
+    guid: aecfff089458d0c4480a051a052c1596
+  - enabled: 1
+    path: Assets/Scenes/Level 5.unity
+    guid: ca998f534449549cd9ac59c1e0881fd9
+  - enabled: 1
+    path: Assets/Scenes/Level 10.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

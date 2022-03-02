@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,6 +7,7 @@ public class BlockManager : MonoBehaviour
 {
 
     public Block[] blockArray;
+    AsyncOperation levelLoading;
 
     int[] hitPoints={5,5,5,5};
 
@@ -15,11 +18,22 @@ public class BlockManager : MonoBehaviour
         blockArray = FindObjectsOfType<Block>();
         // Debug.Log("blockArray "+ blockArray[i].]);
         blockCount = blockArray.Length;
+        Debug.Log("Count");
+        Debug.Log(blockCount);
         subscribeToEvent();
     }
 
     public void nextLevel(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        levelLoading = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        levelLoading.allowSceneActivation = false;
+        StartCoroutine(waitForNextLevel());
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    IEnumerator waitForNextLevel()
+    {
+        yield return new WaitForSeconds(2);
+        levelLoading.allowSceneActivation = true;
     }
 
     void subscribeToEvent() {
@@ -27,15 +41,20 @@ public class BlockManager : MonoBehaviour
             block.onBeingHit+=decreseBlockCount;
 
         }
+        foreach (Block block in blockArray) {
+            Debug.Log(block);
+        }
 
         FindObjectOfType<PlayerController>().onMouseClick+=resetAllBlocks;
     }
     bool decreseBlockCount(int id) {
-        
+        // Debug.Log(blockCount);
         
         int i=0;
         for(i=0; i<blockCount; i+=1) {
-            
+            // Debug.Log("index");
+            // Debug.Log(i);
+            // Debug.Log(blockArray.Length);
             Block block = blockArray[i];
             
             if(block.gameObject.GetInstanceID()==id) {
