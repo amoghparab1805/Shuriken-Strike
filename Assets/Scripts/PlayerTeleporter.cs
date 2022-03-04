@@ -40,8 +40,12 @@ public class PlayerTeleporter : MonoBehaviour
         canTeleport = false;
         Debug.Log(canTeleport);
         var speed = lv.magnitude;
-        var direction = lv.normalized;
-        rb.velocity = -direction * Mathf.Max(speed, 0f);
+        // var direction = lv.normalized;
+        var angle = -currentTeleporter.GetComponent<Teleport>().getDestination().rotation.eulerAngles.z;
+        var direction = new Vector3(Mathf.Sin(Mathf.Deg2Rad * angle), Mathf.Cos(Mathf.Deg2Rad * angle), 0);
+        Debug.Log(lv.normalized);
+        Debug.Log(direction);
+        rb.velocity = direction * Mathf.Max(speed, 0f);
         transform.position = currentTeleporter.GetComponent<Teleport>().getDestination().position;
         yield return new WaitForSeconds(2);
     }

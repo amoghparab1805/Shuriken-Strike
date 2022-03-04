@@ -155,17 +155,19 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.tag == "obstacle")
         {
-            //var speed = lastvelocity.magnitude;
-            //var direction = Vector3.Reflect(lastvelocity.normalized, c.contacts[0].normal);
-            //rb.velocity = direction * Mathf.Max(speed, 0f);
-            rigidbody2D.velocity = new Vector2(0, 0);
+            var speed = lastvelocity.magnitude;
+            var direction = Vector3.Reflect(lastvelocity.normalized, other.contacts[0].normal);
+            rigidbody2D.velocity = direction * Mathf.Max(speed, 0f);
+            // rigidbody2D.velocity = new Vector2(0, 0);
             //gameObject.transform.parent = c.gameObject.transform;
-            FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
-            joint.anchor = other.contacts[0].point;
+            // FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
+            // joint.anchor = other.contacts[0].point;
+            // joint.anchor = new Vector2(0, 0);
             // Debug.Log("Obstacle");
             // Debug.Log(other.contacts[0].point);
-            joint.connectedBody = other.gameObject.transform.GetComponentInParent<Rigidbody2D>();
-            joint.enableCollision = false;
+            // joint.connectedBody = other.gameObject.transform.GetComponentInParent<Rigidbody2D>();
+            // joint.connectedAnchor = new Vector2(-0.5f, 0);
+            // joint.enableCollision = false;
         }
     }
 
