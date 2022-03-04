@@ -1,23 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class select_levels : MonoBehaviour
 {
-    public void level_one(){
-        SceneManager.LoadScene(2);
+    // Start is called before the first frame update
+    public Button[] lvlButtons;
+
+    void Start(){
+        int lvlAt = PlayerPrefs.GetInt("lvlAt", 2);
+        for(int i=0; i<lvlButtons.Length; i++){
+            if(i+2 > lvlAt){
+                lvlButtons[i].interactable = false;
+            }
+        }
     }
 
-    public void level_two(){
-        SceneManager.LoadScene(3);
-    }
-
-    public void level_three(){
-        SceneManager.LoadScene(4);
-    }
-
-    public void level_four(){
-        SceneManager.LoadScene(5);
+    public void loadLevel(int lvl){
+        SceneManager.LoadScene(lvl);
     }
 }

@@ -1,13 +1,17 @@
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
+
 public class PlayerController : MonoBehaviour
 {
+    public event Action OnMouseClick;
+
     public InputData inputData;
+    public BlockManager bm;
 
     public LayerMask collideWithLayer;
     public float moveSpeed = 20f;
     public float hitPoint = 5f;
-    public event Action onMouseClick;
     public GameObject bullet;
     public GameObject bulletdown;
     public Vector3 lastvelocity;
@@ -44,7 +48,7 @@ public class PlayerController : MonoBehaviour
     void handleMovement() {
         if(inputData.isPressed) {
            // changePlayerState(true);
-            Debug.Log("isPressed ");
+            // Debug.Log("isPressed ");
             hitBlock = checkIfHitBlock();
             if(hitBlock) {
                 // changePlayerState(false);
@@ -56,9 +60,9 @@ public class PlayerController : MonoBehaviour
             resetPlayerPosition();
             playerVFX.changeActiveDots(true);
             playerVFX.changeTrailState(false, 0f);
-            Debug.Log("isPressed");
+            // Debug.Log("isPressed");
 
-            onMouseClick?.Invoke();
+            OnMouseClick?.Invoke();
         }
 
         if(inputData.isHeld) {
@@ -73,7 +77,7 @@ public class PlayerController : MonoBehaviour
             //     playerVFX.changeActiveDots(false);
             //     return;
             // }
-            Debug.Log("isReleased "+clickedPosVector);
+            // Debug.Log("isReleased "+clickedPosVector);
             // if()
 
             releasedPosVector = mainCam.ScreenToWorldPoint(Input.mousePosition);
@@ -101,14 +105,14 @@ public class PlayerController : MonoBehaviour
     {
         GameObject b = Instantiate(bullet, new Vector3(290f, 270f, 0f), Quaternion.identity) as GameObject;
         //b.transform.position = new Vector3(290f, 270f, 0f);
-        Debug.Log(b.transform.position);
+        // Debug.Log(b.transform.position);
     }
 
     public void shootdown()
     {
         GameObject b = Instantiate(bulletdown) as GameObject;
         //b.transform.position = new Vector3(290f, 250f, 0f);
-        Debug.Log(b.transform.position);
+        // Debug.Log(b.transform.position);
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -158,8 +162,8 @@ public class PlayerController : MonoBehaviour
             //gameObject.transform.parent = c.gameObject.transform;
             FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
             joint.anchor = other.contacts[0].point;
-            Debug.Log("Obstacle");
-            Debug.Log(other.contacts[0].point);
+            // Debug.Log("Obstacle");
+            // Debug.Log(other.contacts[0].point);
             joint.connectedBody = other.gameObject.transform.GetComponentInParent<Rigidbody2D>();
             joint.enableCollision = false;
         }
@@ -173,6 +177,20 @@ public class PlayerController : MonoBehaviour
 
     void changePlayerState(bool state) {
         // gameObject.visibility = state;
+    }
+
+    void OnBecameInvisible() {
+        Debug.Log("I`m gone :(");
+        if(!ResetBtn.quitGame){
+            if(BlockManager.blockCount>0){
+                Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
+        else if(ResetBtn.quitGame){
+            ResetBtn.quitGame = false;
+        }
+
+
     }
     
 }
