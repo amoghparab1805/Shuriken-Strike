@@ -10,6 +10,7 @@ using System;
 
 public class ResetBtn : MonoBehaviour
 {
+    public static bool quitGame = false;
     private void Start(){
         Debug.Log("quit game start function");
     }
@@ -22,6 +23,7 @@ public class ResetBtn : MonoBehaviour
     }
 
     public void quit(){
+        quitGame = true;
         AnalyticsResult ar = Analytics.CustomEvent("level-quit", new Dictionary<string, object> {
             {"Level", (SceneManager.GetActiveScene().buildIndex - 1)}
         });
