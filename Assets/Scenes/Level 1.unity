@@ -1285,7 +1285,7 @@ MonoBehaviour:
   bm: {fileID: 0}
   collideWithLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   moveSpeed: 200
   hitPoint: 5
   bullet: {fileID: 0}

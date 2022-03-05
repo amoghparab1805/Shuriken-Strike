@@ -88,12 +88,16 @@ public class BlockManager : MonoBehaviour
         // }
         
         // return false;
+        
         blockCount--;
         if(blockCount==0){
             nextLevel();
             return;
         }
+
+        
     }
+    PlayerController pc;
     public void resetAllBlocks() {
         foreach (Block block in blockArray) {
             if(block.gameObject.activeSelf == false) {
