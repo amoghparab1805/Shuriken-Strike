@@ -19,6 +19,7 @@ public class ResetBtn : MonoBehaviour
             {"Level", (SceneManager.GetActiveScene().buildIndex - 1)}
         });
         Debug.Log(ar);
+        Debug.Log("Okkkkkkk");
         Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
     }
 
