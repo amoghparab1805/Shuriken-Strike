@@ -8,9 +8,9 @@ public class PlayerController : MonoBehaviour
 
     public InputData inputData;
     public BlockManager bm;
-
+    public GameObject gameObj;
     public LayerMask collideWithLayer;
-    public float moveSpeed = 20f;
+    public float moveSpeed = 200f;
     public float hitPoint = 5f;
     public GameObject bullet;
     public GameObject bulletdown;
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     Vector3 directionPosVector;
     Camera mainCam;
     Rigidbody2D rigidbody2D;
-    
+    public bool velocity = false;
     bool hitBlock;
 
     PlayerVFX playerVFX;
@@ -49,6 +49,8 @@ public class PlayerController : MonoBehaviour
         if(inputData.isPressed) {
            // changePlayerState(true);
             // Debug.Log("isPressed ");
+            // gameObj.active = true;
+
             hitBlock = checkIfHitBlock();
             if(hitBlock) {
                 // changePlayerState(false);
@@ -66,8 +68,13 @@ public class PlayerController : MonoBehaviour
         }
 
         if(inputData.isHeld) {
+            
             hitBlock = checkIfHitBlock();
-            if(hitBlock) return;
+            Debug.Log("Hit Block" +hitBlock);
+            if(hitBlock) {
+                Debug.Log("Hit Block");
+                return;
+            }
             playerVFX.setDotPosition(clickedPosVector, mainCam.ScreenToWorldPoint(Input.mousePosition));
         }
 
@@ -94,6 +101,15 @@ public class PlayerController : MonoBehaviour
     }
 
     void movePlayerInDirection() {
+        if(directionPosVector*moveSpeed == Vector3.zero) {
+            // gameObj.active = false;
+            // playerVFX.changeActiveDots(false);
+            // playerVFX.changeTrailState(false, 0f);
+            // transform.position =new Vector3(1000, 1000, 0f);
+            velocity=false;
+            return;
+        }
+        velocity=true;
         rigidbody2D.velocity = directionPosVector*moveSpeed;
     }
 
@@ -117,8 +133,11 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        Debug.Log(velocity+" JDL");
+        // if(!velocity) return;
         if (other.gameObject.CompareTag("Block") || other.gameObject.CompareTag("Wall"))
         {
+            Debug.Log("JDL");
             Vector2 wallNormal = other.contacts[0].normal;
             directionPosVector = Vector2.Reflect(rigidbody2D.velocity, wallNormal).normalized;
 
@@ -164,7 +183,8 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnBecameInvisible() {
-        Debug.Log("I`m gone :(");
+        
+            
         if(!ResetBtn.quitGame){
             if(BlockManager.blockCount>0){
                 Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);

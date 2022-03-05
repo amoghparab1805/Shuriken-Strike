@@ -1013,7 +1013,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &585965176
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1544,7 +1544,7 @@ MonoBehaviour:
   bm: {fileID: 0}
   collideWithLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   moveSpeed: 100
   hitPoint: 5
   bullet: {fileID: 0}

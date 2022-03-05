@@ -1126,8 +1126,8 @@ MonoBehaviour:
   bm: {fileID: 0}
   collideWithLayer:
     serializedVersion: 2
-    m_Bits: 0
-  moveSpeed: 100
+    m_Bits: 8
+  moveSpeed: 200
   hitPoint: 5
   bullet: {fileID: 0}
   bulletdown: {fileID: 0}
@@ -2185,7 +2185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2013930484
 RectTransform:
   m_ObjectHideFlags: 0

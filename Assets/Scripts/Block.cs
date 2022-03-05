@@ -4,6 +4,7 @@ public class Block : MonoBehaviour
 {
 
     public event Action onBeingHit;
+    PlayerController pc;
     // Start is called before the first frame update
 
     private void OnCollisionEnter2D(Collision2D other) {
@@ -13,6 +14,7 @@ public class Block : MonoBehaviour
             //     gameObject.SetActive(false);
             // }
             onBeingHit();
+            // if(pc.velocity)
             gameObject.SetActive(false);
         }
             
