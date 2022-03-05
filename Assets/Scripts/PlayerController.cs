@@ -47,13 +47,8 @@ public class PlayerController : MonoBehaviour
 
     void handleMovement() {
         if(inputData.isPressed) {
-           // changePlayerState(true);
-            // Debug.Log("isPressed ");
-            // gameObj.active = true;
-
             hitBlock = checkIfHitBlock();
             if(hitBlock) {
-                // changePlayerState(false);
                 return;
             }
 
@@ -62,31 +57,19 @@ public class PlayerController : MonoBehaviour
             resetPlayerPosition();
             playerVFX.changeActiveDots(true);
             playerVFX.changeTrailState(false, 0f);
-            // Debug.Log("isPressed");
-
             OnMouseClick?.Invoke();
         }
 
         if(inputData.isHeld) {
-            
             hitBlock = checkIfHitBlock();
-            Debug.Log("Hit Block" +hitBlock);
             if(hitBlock) {
-                Debug.Log("Hit Block");
+
                 return;
             }
             playerVFX.setDotPosition(clickedPosVector, mainCam.ScreenToWorldPoint(Input.mousePosition));
         }
 
         if(inputData.isReleased) {
-            // hitBlock = checkIfHitBlock();
-            // if(hitBlock) {
-            //     playerVFX.changeActiveDots(false);
-            //     return;
-            // }
-            // Debug.Log("isReleased "+clickedPosVector);
-            // if()
-
             releasedPosVector = mainCam.ScreenToWorldPoint(Input.mousePosition);
             releasedPosVector = new Vector3(releasedPosVector.x, releasedPosVector.y, 0f);
             playerVFX.changeActiveDots(false);
@@ -97,15 +80,10 @@ public class PlayerController : MonoBehaviour
     }
     void calculateDirection() {
         directionPosVector = (releasedPosVector-clickedPosVector).normalized;
-
     }
 
     void movePlayerInDirection() {
         if(directionPosVector*moveSpeed == Vector3.zero) {
-            // gameObj.active = false;
-            // playerVFX.changeActiveDots(false);
-            // playerVFX.changeTrailState(false, 0f);
-            // transform.position =new Vector3(1000, 1000, 0f);
             velocity=false;
             return;
         }
@@ -117,27 +95,23 @@ public class PlayerController : MonoBehaviour
         transform.position = clickedPosVector;
         rigidbody2D.velocity = Vector3.zero;
     }
-    public void shootup()
+
+    public void shootup(float x, float y)
     {
         GameObject b = Instantiate(bullet) as GameObject;
-        b.transform.position = new Vector3(290f, 270f, 0f);
-        // Debug.Log(b.transform.position);
+        b.transform.position = new Vector3(x, y, 0f);
     }
 
-    public void shootdown()
+    public void shootdown(float x, float y)
     {
         GameObject b = Instantiate(bulletdown) as GameObject;
-        b.transform.position = new Vector3(290f, 250f, 0f);
-        // Debug.Log(b.transform.position);
+        b.transform.position = new Vector3(x, y, 0f);
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log(velocity+" JDL");
-        // if(!velocity) return;
         if (other.gameObject.CompareTag("Block") || other.gameObject.CompareTag("Wall"))
         {
-            Debug.Log("JDL");
             Vector2 wallNormal = other.contacts[0].normal;
             directionPosVector = Vector2.Reflect(rigidbody2D.velocity, wallNormal).normalized;
 
@@ -147,8 +121,8 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Powerup")
         {
             Destroy(other.gameObject);
-            shootup();
-            shootdown();
+            shootup(other.transform.position.x, other.transform.position.y);
+            shootdown(other.transform.position.x, other.transform.position.y);
             var speed = lastvelocity.magnitude;
             var direction = lastvelocity.normalized;
             rigidbody2D.velocity = direction * Mathf.Max(speed, 0f);
@@ -159,16 +133,6 @@ public class PlayerController : MonoBehaviour
             var speed = lastvelocity.magnitude;
             var direction = Vector3.Reflect(lastvelocity.normalized, other.contacts[0].normal);
             rigidbody2D.velocity = direction * Mathf.Max(speed, 0f);
-            // rigidbody2D.velocity = new Vector2(0, 0);
-            //gameObject.transform.parent = c.gameObject.transform;
-            // FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
-            // joint.anchor = other.contacts[0].point;
-            // joint.anchor = new Vector2(0, 0);
-            // Debug.Log("Obstacle");
-            // Debug.Log(other.contacts[0].point);
-            // joint.connectedBody = other.gameObject.transform.GetComponentInParent<Rigidbody2D>();
-            // joint.connectedAnchor = new Vector2(-0.5f, 0);
-            // joint.enableCollision = false;
         }
     }
 

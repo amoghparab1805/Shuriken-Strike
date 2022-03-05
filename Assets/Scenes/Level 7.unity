@@ -531,6 +531,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Square (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3923032353937101432, guid: fdcddfd6fcb74466fb37c72f7a1893c1, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4268944123588081829, guid: fdcddfd6fcb74466fb37c72f7a1893c1, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1242,6 +1246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputData: {fileID: 11400000, guid: 996e94a672cdf4fc59c7ab70f1e8c779, type: 2}
   bm: {fileID: 0}
+  gameObj: {fileID: 0}
   collideWithLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1250,6 +1255,7 @@ MonoBehaviour:
   bullet: {fileID: 6630647429534659190, guid: c7440790af54f41b4bdda6a7ac6a44c0, type: 3}
   bulletdown: {fileID: 6105158964387725552, guid: 9decbfa8e3d3147128e9f5c37505f40b, type: 3}
   lastvelocity: {x: 0, y: 0, z: 0}
+  velocity: 0
 --- !u!114 &1089124395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1894,7 +1900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1427437955
 RectTransform:
   m_ObjectHideFlags: 0
