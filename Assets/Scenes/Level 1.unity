@@ -1190,7 +1190,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.20754719, g: 0.19873622, b: 0.19873622, a: 1}
   m_FlipX: 0
@@ -1249,7 +1249,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1292,7 +1292,7 @@ MonoBehaviour:
   bullet: {fileID: 0}
   bulletdown: {fileID: 0}
   lastvelocity: {x: 0, y: 0, z: 0}
-  velocity: 0
+  showstartKilling: 0
 --- !u!114 &1089124395
 MonoBehaviour:
   m_ObjectHideFlags: 0

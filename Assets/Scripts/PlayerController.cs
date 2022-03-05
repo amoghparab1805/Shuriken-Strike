@@ -20,7 +20,8 @@ public class PlayerController : MonoBehaviour
     Vector3 directionPosVector;
     Camera mainCam;
     Rigidbody2D rigidbody2D;
-    public bool velocity = false;
+    CircleCollider2D circleCollider;
+    public bool showstartKilling = false;
     bool hitBlock;
 
     PlayerVFX playerVFX;
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         mainCam = FindObjectOfType<Camera>();
         playerVFX = GetComponent<PlayerVFX>();
+        circleCollider = GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
@@ -47,10 +49,11 @@ public class PlayerController : MonoBehaviour
 
     void handleMovement() {
         if(inputData.isPressed) {
+            showstartKilling=false;
            // changePlayerState(true);
             // Debug.Log("isPressed ");
             // gameObj.active = true;
-
+            circleCollider.isTrigger=true;
             hitBlock = checkIfHitBlock();
             if(hitBlock) {
                 // changePlayerState(false);
@@ -63,16 +66,18 @@ public class PlayerController : MonoBehaviour
             // playerVFX.changeActiveDots(true);
             // playerVFX.changeTrailState(false, 0f);
             // Debug.Log("isPressed");
-
+            // if(showstartKilling) {
+                // OnMouseClick?.Invoke();
+            // }
             OnMouseClick?.Invoke();
         }
 
         if(inputData.isHeld) {
             
             hitBlock = checkIfHitBlock();
-            Debug.Log("Hit Block" +hitBlock);
+            // Debug.Log("Hit Block" +hitBlock);
             if(hitBlock) {
-                Debug.Log("Hit Block");
+                // Debug.Log("Hit Block");
                 return;
             }
             Vector3 held = new Vector3(mainCam.ScreenToWorldPoint(Input.mousePosition).x, mainCam.ScreenToWorldPoint(Input.mousePosition).y, 0f);
@@ -100,10 +105,14 @@ public class PlayerController : MonoBehaviour
             releasedPosVector = new Vector3(releasedPosVector.x, releasedPosVector.y, 0f);
             playerVFX.changeActiveDots(false);
             calculateDirection();
+            circleCollider.isTrigger=false;
             playerVFX.changeTrailState(true, 0.75f);
             if(Vector3.Distance(releasedPosVector, clickedPosVector)>8) {
+                showstartKilling=true;
+                
                 movePlayerInDirection();
             }
+            showstartKilling=false;
             // movePlayerInDirection();
         }
     }
@@ -118,10 +127,10 @@ public class PlayerController : MonoBehaviour
             // playerVFX.changeActiveDots(false);
             // playerVFX.changeTrailState(false, 0f);
             // transform.position =new Vector3(1000, 1000, 0f);
-            velocity=false;
+            // v=false;
             return;
         }
-        velocity=true;
+        // v=true;
         rigidbody2D.velocity = directionPosVector*moveSpeed;
     }
 
@@ -145,11 +154,11 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log(velocity+" JDL");
+        // Debug.Log(velocity+" JDL");
         // if(!velocity) return;
         if (other.gameObject.CompareTag("Block") || other.gameObject.CompareTag("Wall"))
         {
-            Debug.Log("JDL");
+            // Debug.Log("JDL");
             Vector2 wallNormal = other.contacts[0].normal;
             directionPosVector = Vector2.Reflect(rigidbody2D.velocity, wallNormal).normalized;
 

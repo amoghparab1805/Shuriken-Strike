@@ -63,6 +63,11 @@ public class BlockManager : MonoBehaviour
         }
 
         FindObjectOfType<PlayerController>().OnMouseClick+=resetAllBlocks;
+        // FindObjectOfType<PlayerController>().OnMouseClick+=resetLevel;
+    }
+
+    void resetLevel() {
+        Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
     }
     void decreseBlockCount() {
         // Debug.Log(blockCount);
