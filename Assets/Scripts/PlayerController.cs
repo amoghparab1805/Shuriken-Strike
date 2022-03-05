@@ -103,15 +103,15 @@ public class PlayerController : MonoBehaviour
     }
     public void shootup()
     {
-        GameObject b = Instantiate(bullet, new Vector3(290f, 270f, 0f), Quaternion.identity) as GameObject;
-        //b.transform.position = new Vector3(290f, 270f, 0f);
+        GameObject b = Instantiate(bullet) as GameObject;
+        b.transform.position = new Vector3(290f, 270f, 0f);
         // Debug.Log(b.transform.position);
     }
 
     public void shootdown()
     {
         GameObject b = Instantiate(bulletdown) as GameObject;
-        //b.transform.position = new Vector3(290f, 250f, 0f);
+        b.transform.position = new Vector3(290f, 250f, 0f);
         // Debug.Log(b.transform.position);
     }
 
@@ -133,24 +133,6 @@ public class PlayerController : MonoBehaviour
             var speed = lastvelocity.magnitude;
             var direction = lastvelocity.normalized;
             rigidbody2D.velocity = direction * Mathf.Max(speed, 0f);
-            // count --;
-            // if(count == 0){
-            //     // rb.constraints = RigidbodyConstraints2D.FreezeAll;
-            //     // circle.transform.localScale = new Vector3(0, 0, 0);
-            // }
-
-            Vector3 pos1 = new Vector3(-2.492358f, 3.471171f, 0f);
-            Vector3 pos2 = new Vector3(-2.514237f, -2.479917f, 0f);
-
-            // GameObject[] objs = GameObject.FindSceneObjectsOfType(typeof(GameObject));
-            GameObject[] objs = GameObject.FindObjectsOfType<GameObject>();
-
-            // foreach (GameObject go in objs) {
-            //     if (go.transform.position == pos1 || go.transform.position == pos2) {
-            //         Destroy(go);
-            //     }
-            // }
-
         }
 
         if (other.gameObject.tag == "obstacle")

@@ -17,13 +17,14 @@ public class bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(rb.transform.position.y > 3.471171f){
+        if(rb.transform.position.y > 578f)
+        {
             Destroy(this.gameObject);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other){
-        if(other.tag == "Enemy"){
+        if(other.tag == "Block"){
             Destroy(other.gameObject);
             Destroy(this.gameObject);
         }
