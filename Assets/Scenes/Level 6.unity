@@ -1199,7 +1199,7 @@ MonoBehaviour:
   gameObj: {fileID: 0}
   collideWithLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   moveSpeed: 200
   hitPoint: 5
   bullet: {fileID: 6630647429534659190, guid: c7440790af54f41b4bdda6a7ac6a44c0, type: 3}

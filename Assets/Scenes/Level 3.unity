@@ -1551,14 +1551,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputData: {fileID: 11400000, guid: 996e94a672cdf4fc59c7ab70f1e8c779, type: 2}
   bm: {fileID: 0}
+  gameObj: {fileID: 0}
   collideWithLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   moveSpeed: 200
   hitPoint: 5
   bullet: {fileID: 0}
   bulletdown: {fileID: 0}
   lastvelocity: {x: 0, y: 0, z: 0}
+  velocity: 0
 --- !u!1 &1113276705
 GameObject:
   m_ObjectHideFlags: 0
