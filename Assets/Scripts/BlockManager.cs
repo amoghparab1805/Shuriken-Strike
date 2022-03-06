@@ -12,9 +12,11 @@ public class BlockManager : MonoBehaviour
 
     public Image animImg;
     public Animator anim;
-    int[] hitPoints={5,5,5,5};
+    // int[] hitPoints={5,5,5,5};
     public static bool resetBlockCalled = false;
     [SerializeField] public static int blockCount;
+
+    // PlayerController pc;
 
     void Start() {
         blockArray = FindObjectsOfType<Block>();
@@ -26,6 +28,7 @@ public class BlockManager : MonoBehaviour
         int nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
         if(nextSceneLoad == 10){
             Debug.Log("You Win!!");
+            SceneManager.LoadScene(10);
         }
         else{
             levelLoading = SceneManager.LoadSceneAsync(nextSceneLoad);
@@ -52,8 +55,8 @@ public class BlockManager : MonoBehaviour
 
         }
 
-        FindObjectOfType<PlayerController>().OnMouseClick+=resetAllBlocks;
-        // FindObjectOfType<PlayerController>().OnMouseClick+=resetLevel;
+        // FindObjectOfType<PlayerController>().OnMouseClick+=resetAllBlocks;
+        FindObjectOfType<PlayerController>().OnMouseClick+=resetLevel;
     }
 
     void resetLevel() {
@@ -68,13 +71,14 @@ public class BlockManager : MonoBehaviour
 
         
     }
-    PlayerController pc;
+    
     public void resetAllBlocks() {
-        foreach (Block block in blockArray) {
-            if(block.gameObject.activeSelf == false) {
-                block.gameObject.SetActive(true);
-            }
-        }
+        // foreach (Block block in blockArray) {
+        //     if(block.gameObject.activeSelf == false) {
+        //         block.gameObject.SetActive(true);
+        //     }
+        // }
+        FindObjectOfType<PlayerController>().gameObject.SetActive(false);
         blockCount=blockArray.Length;
         resetBlockCalled = true;
 
