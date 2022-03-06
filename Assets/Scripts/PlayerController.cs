@@ -110,6 +110,7 @@ public class PlayerController : MonoBehaviour
         directionPosVector = (releasedPosVector-clickedPosVector).normalized;
     }
 
+
     void movePlayerInDirection() {
         if(directionPosVector*moveSpeed == Vector3.zero) {
             // gameObj.active = false;
@@ -155,7 +156,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.tag == "Powerup")
         {
-            // Debug.Log("JDL "+);
+            BlockManager.increasePowerUpCount();
             float x = other.gameObject.transform.position.x;
             Destroy(other.gameObject);
             shootup(other.transform.position.x, other.transform.position.y);
@@ -188,7 +189,18 @@ public class PlayerController : MonoBehaviour
             
         if(!ResetBtn.quitGame){
             if(BlockManager.blockCount>0){
+                Debug.Log(BlockManager.blockCount);
                 Debug.Log("PPPPPPPPPPPPPPPPPPPPP");
+
+                // BlockManager.send_level_enemy_killed();
+                // BlockManager.send_level_completion_time();
+                // if (BlockManager.pup){
+                // BlockManager.send_power_ups_used();
+                // BlockManager.pup=false;
+                // }
+                // BlockManager.send_which_enemy_killed();
+
+
                 Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
             }
         }

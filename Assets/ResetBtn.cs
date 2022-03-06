@@ -14,11 +14,20 @@ public class ResetBtn : MonoBehaviour
     private void Start(){
         Debug.Log("quit game start function");
     }
+    // Reset button
     public void hello(){
+
+
+        // Start
         AnalyticsResult ar = Analytics.CustomEvent("level-reset", new Dictionary<string, object> {
             {"Level", (SceneManager.GetActiveScene().buildIndex - 1)}
         });
+        // End
         Debug.Log(ar);
+
+
+
+        // Debug.Log(ar);
         Debug.Log("Okkkkkkk");
         Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
     }

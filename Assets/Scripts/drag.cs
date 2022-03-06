@@ -58,6 +58,7 @@ public class drag : MonoBehaviour
 
 
     public void nextLevel(){
+        Debug.Log("Next level");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
