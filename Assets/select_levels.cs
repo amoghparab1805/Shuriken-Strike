@@ -18,6 +18,12 @@ public class select_levels : MonoBehaviour
         }
     }
 
+    void Update(){
+        if(Input.GetKeyDown(KeyCode.A)){
+            PlayerPrefs.DeleteAll();
+        }
+    }
+
     public void loadLevel(int lvl){
         SceneManager.LoadScene(lvl);
     }

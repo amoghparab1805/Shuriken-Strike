@@ -13,6 +13,7 @@ public class BlockManager : MonoBehaviour
     public Image animImg;
     public Animator anim;
     int[] hitPoints={5,5,5,5};
+    public static bool resetBlockCalled = false;
     [SerializeField] public static int blockCount;
 
     void Start() {
@@ -75,6 +76,7 @@ public class BlockManager : MonoBehaviour
             }
         }
         blockCount=blockArray.Length;
+        resetBlockCalled = true;
 
      }
 

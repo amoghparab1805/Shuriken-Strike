@@ -69,6 +69,10 @@ public class PlayerController : MonoBehaviour
                 // OnMouseClick?.Invoke();
             // }
             OnMouseClick?.Invoke();
+            if(BlockManager.resetBlockCalled){
+                transform.position = new Vector3(1041f, 234.7222f, 0f);
+                rigidbody2D.velocity = Vector3.zero;
+            }
         }
 
         if(inputData.isHeld) {
@@ -123,7 +127,7 @@ public class PlayerController : MonoBehaviour
         rigidbody2D.velocity = directionPosVector*moveSpeed;
     }
 
-    void resetPlayerPosition() {
+    public void resetPlayerPosition() {
         transform.position = clickedPosVector;
         rigidbody2D.velocity = Vector3.zero;
     }
