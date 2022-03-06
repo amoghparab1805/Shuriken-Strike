@@ -58,7 +58,7 @@ public class drag : MonoBehaviour
 
 
     public void nextLevel(){
-        Debug.Log("Next level");
+        // Debug.Log("Next level");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -111,7 +111,7 @@ public class drag : MonoBehaviour
             var direction = lastvelocity.normalized;
             rb.velocity = direction * Mathf.Max(speed, 0f);
             count --;
-            Debug.Log("count = " + count);
+            // Debug.Log("count = " + count);
             if(count == 0){
                 nextLevel();
                 // rb.constraints = RigidbodyConstraints2D.FreezeAll;
@@ -125,7 +125,7 @@ public class drag : MonoBehaviour
             rb.velocity = direction * Mathf.Max(speed, 0f);
             Destroy(c.gameObject);
             count --;
-            Debug.Log("count = " + count);
+            // Debug.Log("count = " + count);
             if(count == 0){
                 nextLevel();
                 // rb.constraints = RigidbodyConstraints2D.FreezeAll;

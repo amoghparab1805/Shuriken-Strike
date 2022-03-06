@@ -45,14 +45,14 @@ public class BlockManager : MonoBehaviour
                 }
                 else {
                     // Debug.Log(b.gameObject.name);
-                    which_enemy_killed_dict.Add(b.gameObject.name, false);
+                    which_enemy_killed_dict.Add(b.gameObject.name, 0);
                 }
             }
           }
 
         if (level==7){
             powerup_analytics.Clear();
-            Debug.Log("In level 7");
+            // Debug.Log("In level 7");
             pup=true;
             powerup_analytics.Add("Level", SceneManager.GetActiveScene().buildIndex-1);
             powerup_analytics.Add("powerups_available", 2);
@@ -60,7 +60,7 @@ public class BlockManager : MonoBehaviour
         }
 
         if (level==8){
-            Debug.Log("In level 8");
+            // Debug.Log("In level 8");
             powerup_analytics.Clear();
             pup=true;
             powerup_analytics.Add("Level", SceneManager.GetActiveScene().buildIndex-1);
@@ -72,12 +72,20 @@ public class BlockManager : MonoBehaviour
     }
 
     public void nextLevel(){
-        send_power_ups_used();
+        // send_power_ups_used();
         send_level_enemy_killed();
-        Debug.Log("Next Level");
+        send_level_completion_time();
+        send_which_enemy_killed();
+        
+        if (pup){
+            send_power_ups_used();
+            pup=false;
+        }
+
+        // Debug.Log("Next Level");
         int nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
         if(nextSceneLoad == 10){
-            Debug.Log("You Win!!");
+            // Debug.Log("You Win!!");
             SceneManager.LoadScene(10);
         }
         else{
@@ -115,11 +123,11 @@ public class BlockManager : MonoBehaviour
         Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
     }
     void decreseBlockCount(string s) {
-        which_enemy_killed_dict[s]=true;
+        which_enemy_killed_dict[s]=1;
 
     foreach (KeyValuePair<string, object> kvp in which_enemy_killed_dict)
     {
-    Debug.Log(string.Format("Key = {0}, Value = {1}", kvp.Key, kvp.Value));
+    // Debug.Log(string.Format("Key = {0}, Value = {1}", kvp.Key, kvp.Value));
     }
         blockCount--;
         if(blockCount==0){
@@ -160,24 +168,34 @@ public class BlockManager : MonoBehaviour
         return newIndicesArray;
     }
 
+    public static void increasePowerUpCount() {
+        powerup_analytics["powerups_used"]=(int) powerup_analytics["powerups_used"]+1;
+    }
+
+
     //Analytics Methods
     public static void send_which_enemy_killed() {
-    // AnalyticsResult ar = Analytics.CustomEvent("which_enemy_killed", which_enemy_killed_dict);
-    // Debug.Log(ar);
+        // foreach (KeyValuePair<string, object> kvp in which_enemy_killed_dict)
+        // {
+        //     Debug.Log("----> Which ENEMIES KILLED: " + string.Format("Key = {0}, Value = {1}", kvp.Key, kvp.Value));
+        // }
 
+        AnalyticsResult ar = Analytics.CustomEvent("which_enemy_killed", which_enemy_killed_dict);
+        Debug.Log(ar);
     }
 
     public static void send_level_completion_time(){
-    long current_time = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
-    int send_time= (int) ((current_time-milliseconds)/1000);
-    Debug.Log(send_time);
-    
-    // AnalyticsResult ar = Analytics.CustomEvent("level_completion_time", new Dictionary<string, object>
-    //     {
-    //        { "level", SceneManager.GetActiveScene().buildIndex-1 },
-    //         { "time_taken", send_time  }
-    //     });
-    // Debug.Log(ar);
+        long current_time = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
+        int send_time= (int) ((current_time-milliseconds)/1000);
+        // Debug.Log("----> Sending Level END Time: " + send_time);
+
+        
+        AnalyticsResult ar = Analytics.CustomEvent("level_completion_time", new Dictionary<string, object>
+        {
+            { "level", SceneManager.GetActiveScene().buildIndex-1 },
+            { "time_taken", send_time  }
+        });
+        Debug.Log(ar);
 
     }
 
@@ -191,34 +209,40 @@ public class BlockManager : MonoBehaviour
             }
         }
         if(kill_count == 0){
-            Debug.Log("Enemies killed: " +  (0).ToString());
+            // Debug.Log("----> Enemies killed: " +  (0).ToString());
+            AnalyticsResult ar = Analytics.CustomEvent("level_enemy_killed", new Dictionary<string, object>
+            {
+                { "level", SceneManager.GetActiveScene().buildIndex-1 },
+                { "enemy_count", 0  }
+            });
+            Debug.Log(ar);
         }
         else{
-            Debug.Log("Enemies killed: " +  (kill_count - 1).ToString());
+            // Debug.Log("----> Enemies killed: " +  (kill_count - 1).ToString());
+            AnalyticsResult ar = Analytics.CustomEvent("level_enemy_killed", new Dictionary<string, object>
+            {
+                { "level", SceneManager.GetActiveScene().buildIndex-1 },
+                { "enemy_count", kill_count-1  }
+            });
+            Debug.Log(ar);
         }
 
-    //     AnalyticsResult ar = Analytics.CustomEvent("level_enemy_killed", new Dictionary<string, object>
-    //     {
-    //         { "level", SceneManager.GetActiveScene().buildIndex-1 },
-    //         { "enemy_count",kill_count-1  }
-    //     });
-
-    // Debug.Log(ar);
-    }
-
-    public static void increasePowerUpCount() {
-    powerup_analytics["powerups_used"]=(int) powerup_analytics["powerups_used"]+1;
+        // AnalyticsResult ar = Analytics.CustomEvent("level_enemy_killed", new Dictionary<string, object>
+        // {
+        //     { "level", SceneManager.GetActiveScene().buildIndex-1 },
+        //     { "enemy_count",kill_count-1  }
+        // });
     }
 
     public static void send_power_ups_used(){
-    foreach (KeyValuePair<string, object> kvp in powerup_analytics)
-    {
-    Debug.Log(string.Format("Key = {0}, Value = {1}", kvp.Key, kvp.Value));
-    }
+        // foreach (KeyValuePair<string, object> kvp in powerup_analytics)
+        // {
+        //     Debug.Log("----> PowerUp Used: " + string.Format("Key = {0}, Value = {1}", kvp.Key, kvp.Value));
+        // }
     
     
-    // AnalyticsResult ar = Analytics.CustomEvent("level_completion_time", powerup_analytics);
-    // Debug.Log(ar);
+        AnalyticsResult ar = Analytics.CustomEvent("level_completion_time", powerup_analytics);
+        Debug.Log(ar);
 
     }
 

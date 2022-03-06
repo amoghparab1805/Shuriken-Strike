@@ -203,23 +203,24 @@ public class PlayerController : MonoBehaviour
             
         if(!ResetBtn.quitGame){
             if(BlockManager.blockCount>0){
-                Debug.Log(BlockManager.blockCount);
-                Debug.Log("PPPPPPPPPPPPPPPPPPPPP");
+                // Debug.Log(BlockManager.blockCount);
+                // Debug.Log("PPPPPPPPPPPPPPPPPPPPP");
 
                 BlockManager.send_level_enemy_killed();
                 // BlockManager.send_level_completion_time();
-                // if (BlockManager.pup){
-                // BlockManager.send_power_ups_used();
-                // BlockManager.pup=false;
-                // }
-                // BlockManager.send_which_enemy_killed();
+
+                if (BlockManager.pup){
+                    BlockManager.send_power_ups_used();
+                    BlockManager.pup=false;
+                }
+                BlockManager.send_which_enemy_killed();
 
 
                 Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
             }
         }
         else if(ResetBtn.quitGame){
-            Debug.Log("QQQQQQQQQ");
+            // Debug.Log("QQQQQQQQQ");
             ResetBtn.quitGame = false;
         }
 
