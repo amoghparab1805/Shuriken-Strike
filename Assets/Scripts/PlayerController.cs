@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
             // Debug.Log("isPressed ");
             // gameObj.active = true;
             circleCollider.isTrigger=true;
+            // Debug.Log("It's a collider "+true);
             hitBlock = checkIfHitBlock();
             if(hitBlock) {
                 return;
@@ -67,7 +68,7 @@ public class PlayerController : MonoBehaviour
             // Debug.Log("isPressed");
             if(clickedPosVector.x == 0 || clickedPosVector.y == 0) return;
             if(showstartKilling) {
-                Debug.Log("AM Love Ell");
+                // Debug.Log("AM Love Ell");
                 OnMouseClick?.Invoke();
             }
             // OnMouseClick?.Invoke();
@@ -102,16 +103,20 @@ public class PlayerController : MonoBehaviour
             releasedPosVector = new Vector3(releasedPosVector.x, releasedPosVector.y, 0f);
             playerVFX.changeActiveDots(false);
             calculateDirection();
-            circleCollider.isTrigger=false;
+            // circleCollider.isTrigger=false;
             playerVFX.changeTrailState(true, 0.75f);
             if(clickedPosVector.x == 0 || clickedPosVector.y == 0) return;
             if(Vector3.Distance(releasedPosVector, clickedPosVector)>8) {
                 showstartKilling=true;
-                
+                circleCollider.isTrigger=false;
+                // Debug.Log("It's a /collider "+false);
                 movePlayerInDirection();
             }
-            else
+            else {
                 showstartKilling=false;
+                transform.position = new Vector3(clickedPosVector.x, clickedPosVector.y, -100f);
+            }
+                
             // movePlayerInDirection();
         }
     }
@@ -201,7 +206,7 @@ public class PlayerController : MonoBehaviour
                 Debug.Log(BlockManager.blockCount);
                 Debug.Log("PPPPPPPPPPPPPPPPPPPPP");
 
-                // BlockManager.send_level_enemy_killed();
+                BlockManager.send_level_enemy_killed();
                 // BlockManager.send_level_completion_time();
                 // if (BlockManager.pup){
                 // BlockManager.send_power_ups_used();

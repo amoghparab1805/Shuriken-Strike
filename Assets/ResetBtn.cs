@@ -22,18 +22,21 @@ public class ResetBtn : MonoBehaviour
         AnalyticsResult ar = Analytics.CustomEvent("level-reset", new Dictionary<string, object> {
             {"Level", (SceneManager.GetActiveScene().buildIndex - 1)}
         });
+
+        // Sending the number of enemies killed
+        BlockManager.send_level_enemy_killed();
+
         // End
         Debug.Log(ar);
 
 
-
-        // Debug.Log(ar);
-        Debug.Log("Okkkkkkk");
         Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void quit(){
         quitGame = true;
+        // Sending the number of enemies killed
+        BlockManager.send_level_enemy_killed();
         AnalyticsResult ar = Analytics.CustomEvent("level-quit", new Dictionary<string, object> {
             {"Level", (SceneManager.GetActiveScene().buildIndex - 1)}
         });

@@ -72,7 +72,8 @@ public class BlockManager : MonoBehaviour
     }
 
     public void nextLevel(){
-                send_power_ups_used();
+        send_power_ups_used();
+        send_level_enemy_killed();
         Debug.Log("Next Level");
         int nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
         if(nextSceneLoad == 10){
@@ -110,6 +111,7 @@ public class BlockManager : MonoBehaviour
     }
 
     void resetLevel() {
+        send_level_enemy_killed();
         Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
     }
     void decreseBlockCount(string s) {
@@ -183,12 +185,17 @@ public class BlockManager : MonoBehaviour
         int kill_count=0;
         foreach (KeyValuePair<string, object> kvp in which_enemy_killed_dict)
         {
-        bool chk = Convert.ToBoolean(kvp.Value);
-        if (chk){
-            kill_count+=1;
+            bool chk = Convert.ToBoolean(kvp.Value);
+            if (chk){
+                kill_count+=1;
+            }
         }
+        if(kill_count == 0){
+            Debug.Log("Enemies killed: " +  (0).ToString());
         }
-        Debug.Log(kill_count);
+        else{
+            Debug.Log("Enemies killed: " +  (kill_count - 1).ToString());
+        }
 
     //     AnalyticsResult ar = Analytics.CustomEvent("level_enemy_killed", new Dictionary<string, object>
     //     {
