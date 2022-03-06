@@ -13,7 +13,8 @@ public class BlockManager : MonoBehaviour
 
     public Image animImg;
     public Animator anim;
-    int[] hitPoints={5,5,5,5};
+    // int[] hitPoints={5,5,5,5};
+    public static bool resetBlockCalled = false;
     [SerializeField] public static int blockCount;
 
     public static long milliseconds;
@@ -22,6 +23,7 @@ public class BlockManager : MonoBehaviour
 
     public static Dictionary<string, object> which_enemy_killed_dict = new Dictionary<string, object>();
     public static Dictionary<string, object> powerup_analytics = new Dictionary<string, object>();
+    // PlayerController pc;
 
     void Start() {
         milliseconds = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
@@ -75,6 +77,7 @@ public class BlockManager : MonoBehaviour
         int nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
         if(nextSceneLoad == 10){
             Debug.Log("You Win!!");
+            SceneManager.LoadScene(10);
         }
         else{
             levelLoading = SceneManager.LoadSceneAsync(nextSceneLoad);
@@ -102,8 +105,8 @@ public class BlockManager : MonoBehaviour
 
         }
 
-        FindObjectOfType<PlayerController>().OnMouseClick+=resetAllBlocks;
-        // FindObjectOfType<PlayerController>().OnMouseClick+=resetLevel;
+        // FindObjectOfType<PlayerController>().OnMouseClick+=resetAllBlocks;
+        FindObjectOfType<PlayerController>().OnMouseClick+=resetLevel;
     }
 
     void resetLevel() {
@@ -122,23 +125,16 @@ public class BlockManager : MonoBehaviour
             return;
         }        
     }
-
-    PlayerController pc;
+    
     public void resetAllBlocks() {
-        // send_level_enemy_killed();
-        // send_level_completion_time();
-        // if (pup){
-        // send_power_ups_used();
-        // pup=false;
+        // foreach (Block block in blockArray) {
+        //     if(block.gameObject.activeSelf == false) {
+        //         block.gameObject.SetActive(true);
+        //     }
         // }
-        // send_which_enemy_killed
-        
-        foreach (Block block in blockArray) {
-            if(block.gameObject.activeSelf == false) {
-                block.gameObject.SetActive(true);
-            }
-        }
+        FindObjectOfType<PlayerController>().gameObject.SetActive(false);
         blockCount=blockArray.Length;
+        resetBlockCalled = true;
 
      }
 

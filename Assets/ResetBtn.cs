@@ -38,6 +38,6 @@ public class ResetBtn : MonoBehaviour
             {"Level", (SceneManager.GetActiveScene().buildIndex - 1)}
         });
         Debug.Log(ar);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

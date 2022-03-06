@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
     void handleMovement() {
         if(inputData.isPressed) {
-            showstartKilling=false;
+            // showstartKilling=false;
            // changePlayerState(true);
             // Debug.Log("isPressed ");
             // gameObj.active = true;
@@ -65,10 +65,16 @@ public class PlayerController : MonoBehaviour
             // playerVFX.changeActiveDots(true);
             // playerVFX.changeTrailState(false, 0f);
             // Debug.Log("isPressed");
-            // if(showstartKilling) {
-                // OnMouseClick?.Invoke();
+            if(clickedPosVector.x == 0 || clickedPosVector.y == 0) return;
+            if(showstartKilling) {
+                Debug.Log("AM Love Ell");
+                OnMouseClick?.Invoke();
+            }
+            // OnMouseClick?.Invoke();
+            // if(BlockManager.resetBlockCalled){
+            //     transform.position = new Vector3(clickedPosVector.x, clickedPosVector.y, 0f);
+            //     rigidbody2D.velocity = Vector3.zero;
             // }
-            OnMouseClick?.Invoke();
         }
 
         if(inputData.isHeld) {
@@ -81,6 +87,7 @@ public class PlayerController : MonoBehaviour
             Vector3 held = new Vector3(mainCam.ScreenToWorldPoint(Input.mousePosition).x, mainCam.ScreenToWorldPoint(Input.mousePosition).y, 0f);
             // Debug.Log("Moved "++" Clicked "+ clickedPosVector);
             // Vector2 
+            if(clickedPosVector.x == 0 || clickedPosVector.y == 0) return;
             if(Vector3.Distance(held, clickedPosVector)>8) {
                 resetPlayerPosition();
                 playerVFX.changeActiveDots(true);
@@ -97,12 +104,14 @@ public class PlayerController : MonoBehaviour
             calculateDirection();
             circleCollider.isTrigger=false;
             playerVFX.changeTrailState(true, 0.75f);
+            if(clickedPosVector.x == 0 || clickedPosVector.y == 0) return;
             if(Vector3.Distance(releasedPosVector, clickedPosVector)>8) {
                 showstartKilling=true;
                 
                 movePlayerInDirection();
             }
-            showstartKilling=false;
+            else
+                showstartKilling=false;
             // movePlayerInDirection();
         }
     }
@@ -124,7 +133,7 @@ public class PlayerController : MonoBehaviour
         rigidbody2D.velocity = directionPosVector*moveSpeed;
     }
 
-    void resetPlayerPosition() {
+    public void resetPlayerPosition() {
         transform.position = clickedPosVector;
         rigidbody2D.velocity = Vector3.zero;
     }
