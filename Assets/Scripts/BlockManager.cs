@@ -12,18 +12,12 @@ public class BlockManager : MonoBehaviour
 
     public Image animImg;
     public Animator anim;
-
     int[] hitPoints={5,5,5,5};
-
     [SerializeField] public static int blockCount;
-    // Start is called before the first frame update
 
     void Start() {
         blockArray = FindObjectsOfType<Block>();
-        // Debug.Log("blockArray "+ blockArray[i].]);
         blockCount = blockArray.Length;
-        // Debug.Log("Count");
-        // Debug.Log(blockCount);
         SubscribeToEvent();
     }
 
@@ -44,8 +38,6 @@ public class BlockManager : MonoBehaviour
 
     IEnumerator waitForNextLevel()
     {
-        // Cursor.lockState = CursorLockMode.Locked;
-        // Cursor.visible = false;
         anim.SetBool("Fade", true);
 
         yield return new WaitUntil(()=>animImg.color.a==1);
@@ -58,9 +50,6 @@ public class BlockManager : MonoBehaviour
             block.onBeingHit+=decreseBlockCount;
 
         }
-        foreach (Block block in blockArray) {
-            // Debug.Log(block);
-        }
 
         FindObjectOfType<PlayerController>().OnMouseClick+=resetAllBlocks;
         // FindObjectOfType<PlayerController>().OnMouseClick+=resetLevel;
@@ -70,30 +59,6 @@ public class BlockManager : MonoBehaviour
         Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
     }
     void decreseBlockCount() {
-        // Debug.Log(blockCount);
-        
-        // int i=0;
-        // for(i=0; i<blockCount; i+=1) {
-        //     // Debug.Log("index");
-        //     // Debug.Log(i);
-        //     // Debug.Log(blockArray.Length);
-        //     Block block = blockArray[i];
-            
-        //     if(block.gameObject.GetInstanceID()==id) {
-        //         hitPoints[i]-=5;
-        //         if(hitPoints[i]<=0) {
-        //             blockArray = RemoveIndices(blockArray, i);
-        //             blockCount-=1;
-        //             if(blockCount==0) nextLevel();
-        //             return true;
-        //         } 
-        //         break;
-        //     }
-            
-        // }
-        
-        // return false;
-        
         blockCount--;
         if(blockCount==0){
             nextLevel();

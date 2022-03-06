@@ -5,28 +5,21 @@ public class Block : MonoBehaviour
 
     public event Action onBeingHit;
     PlayerController pc;
-    // Start is called before the first frame update
 
-    private void OnCollisionEnter2D(Collision2D other) {
+    // Hit by powerup
+    private void OnTriggerEnter2D(Collider2D other){
+        Debug.Log(onBeingHit);
         if(onBeingHit != null) {
-            // onBeingHit(gameObject.GetInstanceID());
-            // if(onBeingHit(gameObject.GetInstanceID())) {
-            //     gameObject.SetActive(false);
-            // }
             onBeingHit();
-            // if(pc.velocity)
             gameObject.SetActive(false);
         }
-            
-        // }
-        // Debug.Log("gameObject "+ gameObject.GetInstanceID());
-
-        // gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    // Hit by ball
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(onBeingHit != null) {
+            onBeingHit();
+            gameObject.SetActive(false);
+        }
     }
 }
