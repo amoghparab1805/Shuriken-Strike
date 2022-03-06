@@ -1459,7 +1459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3923032353937101432, guid: fdcddfd6fcb74466fb37c72f7a1893c1, type: 3}
       propertyPath: m_Name
-      value: Square (7)
+      value: l2_enemy_2
       objectReference: {fileID: 0}
     - target: {fileID: 4268944123588081829, guid: fdcddfd6fcb74466fb37c72f7a1893c1, type: 3}
       propertyPath: m_Mesh
@@ -2021,7 +2021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3923032353937101432, guid: fdcddfd6fcb74466fb37c72f7a1893c1, type: 3}
       propertyPath: m_Name
-      value: Square (6)
+      value: l3_enemy_1
       objectReference: {fileID: 0}
     - target: {fileID: 4268944123588081829, guid: fdcddfd6fcb74466fb37c72f7a1893c1, type: 3}
       propertyPath: m_Mesh

@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_Name
-      value: Block (6)
+      value: l7_enemy_4
       objectReference: {fileID: 0}
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_TagString
@@ -205,7 +205,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_Name
-      value: Block (4)
+      value: l7_enemy_6
       objectReference: {fileID: 0}
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_TagString
@@ -655,7 +655,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437032094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 10.09, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1430,7 +1430,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_Name
-      value: Block (2)
+      value: l7_enemy_1
       objectReference: {fileID: 0}
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_TagString
@@ -1576,7 +1576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089124386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1223, y: 217, z: 0}
+  m_LocalPosition: {x: 1090.4, y: 217, z: 0}
   m_LocalScale: {x: 12.711717, y: 12.711717, z: 12.711717}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1682,7 +1682,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_Name
-      value: Block (5)
+      value: l7_enemy_3
       objectReference: {fileID: 0}
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_TagString
@@ -1850,7 +1850,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_Name
-      value: Block (3)
+      value: l7_enemy_2
       objectReference: {fileID: 0}
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_TagString
@@ -2017,7 +2017,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1427437955
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2284,7 +2284,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_Name
-      value: Block (9)
+      value: l7_enemy_5
       objectReference: {fileID: 0}
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_TagString

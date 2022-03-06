@@ -8,8 +8,10 @@ public class Block : MonoBehaviour
 
     // Hit by powerup
     private void OnTriggerEnter2D(Collider2D other){
-        Debug.Log(onBeingHit);
-        if(onBeingHit != null) {
+        Debug.Log("Am and Lorenzo GameObj"+gameObject.tag);
+        Debug.Log("Am and Lorenzo "+other.tag);
+        // && other.gameObject.tag=="Powerup"
+        if(onBeingHit != null && other.tag=="bullet") {
             onBeingHit();
             gameObject.SetActive(false);
         }

@@ -1191,7 +1191,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_Name
-      value: Block (4)
+      value: l6_enemy_2
       objectReference: {fileID: 0}
     - target: {fileID: 5001756604196494604, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_RootOrder
@@ -1264,7 +1264,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_Name
-      value: Block (2)
+      value: l6_enemy_1
       objectReference: {fileID: 0}
     - target: {fileID: 5001756604196494604, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_RootOrder

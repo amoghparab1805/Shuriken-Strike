@@ -529,7 +529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3923032353937101432, guid: fdcddfd6fcb74466fb37c72f7a1893c1, type: 3}
       propertyPath: m_Name
-      value: Square (6)
+      value: l8_enemy_5
       objectReference: {fileID: 0}
     - target: {fileID: 3923032353937101432, guid: fdcddfd6fcb74466fb37c72f7a1893c1, type: 3}
       propertyPath: m_TagString
@@ -819,7 +819,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_Name
-      value: Block (4)
+      value: l8_enemy_3
       objectReference: {fileID: 0}
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_TagString
@@ -892,7 +892,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_Name
-      value: Block (2)
+      value: l8_enemy_1
       objectReference: {fileID: 0}
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_TagString
@@ -1144,7 +1144,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_Name
-      value: Block (5)
+      value: l8_enemy_4
       objectReference: {fileID: 0}
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_TagString
@@ -1439,7 +1439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3923032353937101432, guid: fdcddfd6fcb74466fb37c72f7a1893c1, type: 3}
       propertyPath: m_Name
-      value: Square (7)
+      value: l8_enemy_6
       objectReference: {fileID: 0}
     - target: {fileID: 4268944123588081829, guid: fdcddfd6fcb74466fb37c72f7a1893c1, type: 3}
       propertyPath: m_Mesh
@@ -1464,7 +1464,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_Name
-      value: Block (3)
+      value: l8_enemy_2
       objectReference: {fileID: 0}
     - target: {fileID: 5001756604196494602, guid: 5d1efc55ba13e45af90b1e2fae9b60a5, type: 3}
       propertyPath: m_TagString
