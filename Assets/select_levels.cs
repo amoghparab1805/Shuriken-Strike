@@ -22,6 +22,11 @@ public class select_levels : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.A)){
             PlayerPrefs.DeleteAll();
         }
+        if(Input.GetKeyDown(KeyCode.F)){
+            for(int i=0; i<lvlButtons.Length; i++){
+                lvlButtons[i].interactable = true;
+            }
+        }
     }
 
     public void loadLevel(int lvl){
