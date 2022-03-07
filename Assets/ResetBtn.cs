@@ -49,4 +49,8 @@ public class ResetBtn : MonoBehaviour
         Debug.Log(ar);
         SceneManager.LoadScene(1);
     }
+    
+    public void quitAfterWin(){
+        SceneManager.LoadScene(0);
+    }
 }
