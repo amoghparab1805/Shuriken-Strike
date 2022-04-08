@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     void getComponents() {
         rigidbody2D = GetComponent<Rigidbody2D>();
         mainCam = FindObjectOfType<Camera>();
-        playerVFX = GetComponent<PlayerVFX>();
+        // playerVFX = GetComponent<PlayerVFX>();
         circleCollider = GetComponent<CircleCollider2D>();
     }
 
@@ -91,20 +91,20 @@ public class PlayerController : MonoBehaviour
             if(clickedPosVector.x == 0 || clickedPosVector.y == 0) return;
             if(Vector3.Distance(held, clickedPosVector)>8) {
                 resetPlayerPosition();
-                playerVFX.changeActiveDots(true);
-                playerVFX.changeTrailState(false, 0f);
+                // playerVFX.changeActiveDots(true);
+                // playerVFX.changeTrailState(false, 0f);
             }
             // Debug.Log(clickedPosVector);
-            playerVFX.setDotPosition(clickedPosVector, mainCam.ScreenToWorldPoint(Input.mousePosition));
+            // playerVFX.setDotPosition(clickedPosVector, mainCam.ScreenToWorldPoint(Input.mousePosition));
         }
 
         if(inputData.isReleased) {
             releasedPosVector = mainCam.ScreenToWorldPoint(Input.mousePosition);
             releasedPosVector = new Vector3(releasedPosVector.x, releasedPosVector.y, 0f);
-            playerVFX.changeActiveDots(false);
+            // playerVFX.changeActiveDots(false);
             calculateDirection();
             // circleCollider.isTrigger=false;
-            playerVFX.changeTrailState(true, 0.75f);
+            // playerVFX.changeTrailState(true, 0.75f);
             if(clickedPosVector.x == 0 || clickedPosVector.y == 0) return;
             if(Vector3.Distance(releasedPosVector, clickedPosVector)>8) {
                 showstartKilling=true;
@@ -135,7 +135,8 @@ public class PlayerController : MonoBehaviour
             return;
         }
         // v=true;
-        rigidbody2D.velocity = directionPosVector*moveSpeed;
+        rigidbody2D.velocity = -1*directionPosVector*moveSpeed;
+        // rigidbody2D.velocity = directionPosVector*moveSpeed;
     }
 
     public void resetPlayerPosition() {
