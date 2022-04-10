@@ -1840,6 +1840,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FreezeButton: {fileID: 1717552293}
+  HintButton: {fileID: 1523922866}
+  startingPoint: {fileID: 1946332196}
 --- !u!1 &1523922864
 GameObject:
   m_ObjectHideFlags: 0
@@ -2558,7 +2560,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1946332195
 MonoBehaviour:
   m_ObjectHideFlags: 0
