@@ -3,6 +3,8 @@ using System;
 public class Block : MonoBehaviour
 {
 
+    public AudioSource killSound;
+
     public event Action onBeingHit;
     PlayerController pc;
 
@@ -11,6 +13,7 @@ public class Block : MonoBehaviour
         // && other.gameObject.tag=="Powerup"
         if(onBeingHit != null && other.tag=="bullet") {
             onBeingHit();
+            killSound.Play();
             gameObject.SetActive(false);
         }
     }
@@ -19,6 +22,7 @@ public class Block : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         if(onBeingHit != null) {
             onBeingHit();
+            killSound.Play();
             gameObject.SetActive(false);
         }
     }
