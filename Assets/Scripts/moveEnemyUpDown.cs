@@ -1,22 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class moveEnemyUpDown : MonoBehaviour
 {
     public float delta = 2.0f; 
     public float speed = 1.0f;
+    public Button FreezeButton;
+    bool isFreezed;
+    Rigidbody2D rigidbody;
     private Vector3 startPos;
 
     void Start()
     {
+        isFreezed = false;
+        rigidbody = GetComponent<Rigidbody2D>();
+        if(FreezeButton){
+            FreezeButton.onClick.AddListener(freezeObjects);
+        }
         startPos = transform.position;
     }
 
     void Update()
     {
-        Vector3 v = startPos;
-        v.y += delta * Mathf.PingPong(Time.time * speed, 1);
-        transform.position = v;
+        if(!isFreezed){
+            Vector3 v = startPos;
+            v.y += delta * Mathf.PingPong(Time.time * speed, 1);
+            transform.position = v;
+        }
+    }
+
+    void freezeObjects()
+    {
+        isFreezed = true;
     }
 }
