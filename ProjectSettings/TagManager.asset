@@ -62,3 +62,6 @@ TagManager:
   - name: tut
     uniqueID: 4260488033
     locked: 0
+  - name: fade-out
+    uniqueID: 255338861
+    locked: 0
