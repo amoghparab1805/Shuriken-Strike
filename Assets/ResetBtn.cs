@@ -14,6 +14,12 @@ public class ResetBtn : MonoBehaviour
     private void Start(){
         Debug.Log("quit game start function");
     }
+    public void mainMenuStart(){
+        Application.LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void mainMenuQuit(){
+        Application.Quit();
+    }
     // Reset button
     public void hello(){
 
