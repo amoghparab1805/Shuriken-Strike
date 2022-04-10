@@ -52,8 +52,8 @@ public class ResetBtn : MonoBehaviour
         AnalyticsResult ar = Analytics.CustomEvent("level-quit", new Dictionary<string, object> {
             {"Level", (SceneManager.GetActiveScene().buildIndex - 1)}
         });
-        Debug.Log(ar);
         SceneManager.LoadScene(1);
+        Debug.Log(ar);
     }
     
     public void quitAfterWin(){

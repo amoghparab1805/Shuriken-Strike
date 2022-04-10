@@ -455,8 +455,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockArray: []
-  animImg: {fileID: 0}
-  anim: {fileID: 0}
+  winAmount: 10
+  animImg: {fileID: 1455597518}
+  anim: {fileID: 1455597517}
 --- !u!1 &437032094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,6 +1551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1470793071}
   - component: {fileID: 1470793070}
+  - component: {fileID: 1470793072}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1584,6 +1586,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1470793072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470793069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3988c7b4cac9476495a74242f743be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FreezeButton: {fileID: 1717552293}
 --- !u!1 &1584594139
 GameObject:
   m_ObjectHideFlags: 0

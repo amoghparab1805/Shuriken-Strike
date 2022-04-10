@@ -9,6 +9,7 @@ public class BlockManager : MonoBehaviour
 {
 
     public Block[] blockArray;
+    public int winAmount;
     AsyncOperation levelLoading;
 
     public Image animImg;
@@ -18,6 +19,7 @@ public class BlockManager : MonoBehaviour
     [SerializeField] public static int blockCount;
 
     public static long milliseconds;
+    public static int coins;
 
     public static bool pup=false;
 
@@ -35,6 +37,7 @@ public class BlockManager : MonoBehaviour
         int level = SceneManager.GetActiveScene().buildIndex-1;
         which_enemy_killed_dict.Clear();
         which_enemy_killed_dict.Add("Level", SceneManager.GetActiveScene().buildIndex-1);
+        coins = PlayerPrefs.GetInt("totalCoins");
 
         foreach (Block b in blockArray) 
           {
@@ -81,6 +84,8 @@ public class BlockManager : MonoBehaviour
             send_power_ups_used();
             pup=false;
         }
+
+        AfterLevelWin();
 
         // Debug.Log("Next Level");
         int nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
@@ -244,6 +249,12 @@ public class BlockManager : MonoBehaviour
         AnalyticsResult ar = Analytics.CustomEvent("level_completion_time", powerup_analytics);
         Debug.Log(ar);
 
+    }
+
+    public void AfterLevelWin() {
+        coins += winAmount;
+        PlayerPrefs.SetInt("totalCoins", coins);
+        Debug.Log(coins);
     }
 
 }

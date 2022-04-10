@@ -596,6 +596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockArray: []
+  winAmount: 15
   animImg: {fileID: 1817158089}
   anim: {fileID: 1817158088}
 --- !u!4 &355876429 stripped

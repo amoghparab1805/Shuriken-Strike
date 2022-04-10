@@ -417,6 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockArray: []
+  winAmount: 10
   animImg: {fileID: 1431506803}
   anim: {fileID: 1431506802}
 --- !u!1 &353294606

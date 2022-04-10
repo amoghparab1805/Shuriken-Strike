@@ -20,6 +20,10 @@ public class select_levels : MonoBehaviour
 
     void Update(){
         if(Input.GetKeyDown(KeyCode.A)){
+            for(int i=0; i<lvlButtons.Length; i++){
+                lvlButtons[i].interactable = false;
+            }
+            lvlButtons[0].interactable = true;
             PlayerPrefs.DeleteAll();
         }
         if(Input.GetKeyDown(KeyCode.F)){
