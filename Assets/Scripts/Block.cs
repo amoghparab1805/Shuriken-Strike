@@ -11,6 +11,7 @@ public class Block : MonoBehaviour
     // Hit by powerup
     private void OnTriggerEnter2D(Collider2D other){
         // && other.gameObject.tag=="Powerup"
+        Debug.Log("OnTriggerEnter2D");
         if(onBeingHit != null && other.tag=="bullet") {
             onBeingHit();
             killSound.Play();
@@ -20,6 +21,7 @@ public class Block : MonoBehaviour
 
     // Hit by ball
     private void OnCollisionEnter2D(Collision2D other) {
+        Debug.Log("OnCollisionEnter2D");
         if(onBeingHit != null) {
             onBeingHit();
             killSound.Play();
