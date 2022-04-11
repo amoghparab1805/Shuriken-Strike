@@ -6,10 +6,18 @@ using UnityEngine.UI;
 public class AddOnController : MonoBehaviour
 {
     public Button FreezeButton;
+    public Button HintButton;
+    public SpriteRenderer startingPoint;
     // Start is called before the first frame update
     void Start()
     {
         int coins = PlayerPrefs.GetInt("totalCoins");
+        HintButton.interactable = true;
+        if(startingPoint.gameObject.activeSelf){
+            startingPoint.gameObject.SetActive(true);
+        }
+        // startingPoint = GetComponent<SpriteRenderer>();
+        // startingPoint.enabled = false;
         if(coins>=10){
             FreezeButton.interactable = true;
         }
@@ -41,6 +49,7 @@ public class AddOnController : MonoBehaviour
         else{
             FreezeButton.interactable = false;
         }
+        HintButton.onClick.AddListener(showHint);
         // if(coins>=10){
         //     AddOn2.interactable = true;
         // }
@@ -58,5 +67,9 @@ public class AddOnController : MonoBehaviour
         int coins = PlayerPrefs.GetInt("totalCoins");
         Debug.Log(coins-subAmount);
         PlayerPrefs.SetInt("totalCoins", coins-subAmount);
+    }
+
+    void showHint(){
+        startingPoint.gameObject.SetActive(true);
     }
 }
