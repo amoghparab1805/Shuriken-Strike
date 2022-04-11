@@ -1732,7 +1732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FreezeButton: {fileID: 1717552293}
   HintButton: {fileID: 0}
-  startingPoint: {fileID: 0}
+  startingPoint: {fileID: 2068889874}
 --- !u!1 &1584594139
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,7 +2208,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6c8c3082a581d4da8b5933712833d869, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc356479dc087417a950622d9eba66af, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

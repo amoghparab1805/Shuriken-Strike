@@ -819,8 +819,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockArray: []
   winAmount: 10
-  animImg: {fileID: 0}
-  anim: {fileID: 0}
+  animImg: {fileID: 1344904667}
+  anim: {fileID: 1344904666}
 --- !u!1 &340007342
 GameObject:
   m_ObjectHideFlags: 0

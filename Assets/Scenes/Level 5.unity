@@ -894,8 +894,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockArray: []
   winAmount: 20
-  animImg: {fileID: 0}
-  anim: {fileID: 0}
+  animImg: {fileID: 1751831005}
+  anim: {fileID: 1751831004}
 --- !u!1001 &389112036
 PrefabInstance:
   m_ObjectHideFlags: 0
