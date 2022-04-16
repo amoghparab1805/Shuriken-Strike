@@ -189,11 +189,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6704201761344486294, guid: 4dfcae4fb918e417ca5a6826ec543d18, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 554
+      value: 549
       objectReference: {fileID: 0}
     - target: {fileID: 6704201761344486294, guid: 4dfcae4fb918e417ca5a6826ec543d18, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 415
+      value: 451
       objectReference: {fileID: 0}
     - target: {fileID: 6704201761344486294, guid: 4dfcae4fb918e417ca5a6826ec543d18, type: 3}
       propertyPath: m_LocalPosition.z
@@ -697,7 +697,7 @@ Canvas:
   m_OverrideSorting: 1
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 255338861
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1098,7 +1098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &605058301
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1285,7 +1285,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a469110ca356340b29eed9565b5a0a2c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 733ba073dcfa5411f9ede23c365638cb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1322,7 +1322,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 66, y: 10.018}
-  m_SizeDelta: {x: 46.702698, y: 44.40027}
+  m_SizeDelta: {x: 75, y: 40}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &666003421
 GameObject:
@@ -1800,7 +1800,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807468380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 524, y: 142, z: 0}
+  m_LocalPosition: {x: 547, y: 142, z: 0}
   m_LocalScale: {x: 63.08469, y: 63.08469, z: 63.08469}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2446,7 +2446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1422330052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2644,6 +2644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: -1
   rotateSpeed: 80
+  FreezeButton: {fileID: 0}
 --- !u!212 &1469864413
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2904,7 +2905,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: HINT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3276,7 +3277,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 195260609}
         m_TargetAssemblyTypeName: ResetBtn, Assembly-CSharp
         m_MethodName: quit
         m_Mode: 1
@@ -3691,7 +3692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002773137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 641.4651, y: 377, z: 0}
+  m_LocalPosition: {x: 616, y: 377, z: 0}
   m_LocalScale: {x: 63.08469, y: 63.08469, z: 63.08469}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3782,7 +3783,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 195260609}
         m_TargetAssemblyTypeName: ResetBtn, Assembly-CSharp
         m_MethodName: hello
         m_Mode: 1
@@ -3849,11 +3850,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6704201761344486294, guid: 4dfcae4fb918e417ca5a6826ec543d18, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 403
+      value: 406
       objectReference: {fileID: 0}
     - target: {fileID: 6704201761344486294, guid: 4dfcae4fb918e417ca5a6826ec543d18, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 170
+      value: 132
       objectReference: {fileID: 0}
     - target: {fileID: 6704201761344486294, guid: 4dfcae4fb918e417ca5a6826ec543d18, type: 3}
       propertyPath: m_LocalPosition.z

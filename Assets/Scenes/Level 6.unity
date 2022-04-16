@@ -411,7 +411,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1470793070}
         m_TargetAssemblyTypeName: ResetBtn, Assembly-CSharp
         m_MethodName: hello
         m_Mode: 1
@@ -679,7 +679,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: HINT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1292,7 +1292,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bc356479dc087417a950622d9eba66af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c8c3082a581d4da8b5933712833d869, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1841,7 +1841,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1470793070}
         m_TargetAssemblyTypeName: ResetBtn, Assembly-CSharp
         m_MethodName: quit
         m_Mode: 1
@@ -1992,7 +1992,7 @@ Canvas:
   m_OverrideSorting: 1
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 255338861
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2195,7 +2195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delta: 275
   speed: 0.35
-  FreezeButton: {fileID: 0}
+  FreezeButton: {fileID: 481298076}
 --- !u!1 &1244317044
 GameObject:
   m_ObjectHideFlags: 0
@@ -2463,7 +2463,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a469110ca356340b29eed9565b5a0a2c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 733ba073dcfa5411f9ede23c365638cb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2500,7 +2500,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 66, y: 10.018}
-  m_SizeDelta: {x: 46.702698, y: 44.40027}
+  m_SizeDelta: {x: 75, y: 40}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &1470793069
 GameObject:
@@ -2729,6 +2729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: -1
   rotateSpeed: 80
+  FreezeButton: {fileID: 0}
 --- !u!212 &1678041690
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2996,3 +2997,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delta: 275
   speed: 0.35
+  FreezeButton: {fileID: 481298076}

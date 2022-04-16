@@ -29,6 +29,9 @@ public class moveEnemyUpDown : MonoBehaviour
             v.y += delta * Mathf.PingPong(Time.time * speed, 1);
             transform.position = v;
         }
+        else{
+            FreezeButton.interactable = false;
+        }
     }
 
     void freezeObjects()

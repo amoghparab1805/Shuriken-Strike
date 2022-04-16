@@ -123,6 +123,26 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &17398216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6807393260806313959, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
+  m_PrefabInstance: {fileID: 1946033675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &17398222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17398216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c58203dc4327b45a821839ae7e468c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delta: -50
+  speed: 2
+  FreezeButton: {fileID: 1223934203}
 --- !u!1001 &218441422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -808,7 +828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6807393260806313954, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 298.031
+      value: 358.031
       objectReference: {fileID: 0}
     - target: {fileID: 6807393260806313954, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
       propertyPath: m_LocalPosition.z
@@ -852,6 +872,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
+--- !u!1 &555657815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6807393260806313959, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
+  m_PrefabInstance: {fileID: 555657814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &555657816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555657815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6461543673154dd9a5edda7029ebed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delta: 120
+  speed: 0.75
+  FreezeButton: {fileID: 1223934203}
 --- !u!1 &573860437
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,6 +969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: -1
   rotateSpeed: 80
+  FreezeButton: {fileID: 0}
 --- !u!212 &610563220
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1096,7 +1137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6807393260806313954, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 298.031
+      value: 238
       objectReference: {fileID: 0}
     - target: {fileID: 6807393260806313954, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1140,6 +1181,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
+--- !u!1 &825415818 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6807393260806313959, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
+  m_PrefabInstance: {fileID: 825415817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &825415819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825415818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9652fc91529147a4fac9980191d8001d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delta: 120
+  speed: 0.75
+  FreezeButton: {fileID: 1223934203}
+--- !u!1 &879417729 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6807393260806313959, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
+  m_PrefabInstance: {fileID: 387066955}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &879417735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879417729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c58203dc4327b45a821839ae7e468c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delta: 50
+  speed: 2
+  FreezeButton: {fileID: 1223934203}
+--- !u!1 &885143973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6807393260806313959, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
+  m_PrefabInstance: {fileID: 1971852421}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &885143979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885143973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c58203dc4327b45a821839ae7e468c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delta: 50
+  speed: 2
+  FreezeButton: {fileID: 1223934203}
 --- !u!1 &895955635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,6 +1624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: -1
   rotateSpeed: 80
+  FreezeButton: {fileID: 0}
 --- !u!61 &994510299
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1671,6 +1773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: -1
   rotateSpeed: 80
+  FreezeButton: {fileID: 0}
 --- !u!61 &1002968056
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2256,7 +2359,7 @@ Canvas:
   m_OverrideSorting: 1
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 255338861
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2320,7 +2423,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bc356479dc087417a950622d9eba66af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c8c3082a581d4da8b5933712833d869, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2466,7 +2569,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1470793070}
         m_TargetAssemblyTypeName: ResetBtn, Assembly-CSharp
         m_MethodName: quit
         m_Mode: 1
@@ -2631,6 +2734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: -1
   rotateSpeed: 80
+  FreezeButton: {fileID: 0}
 --- !u!61 &1584594142
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2936,7 +3040,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1470793070}
         m_TargetAssemblyTypeName: ResetBtn, Assembly-CSharp
         m_MethodName: hello
         m_Mode: 1
@@ -3090,6 +3194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: -1
   rotateSpeed: 80
+  FreezeButton: {fileID: 0}
 --- !u!61 &1717452726
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3183,6 +3288,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!1 &1776136622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6807393260806313959, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
+  m_PrefabInstance: {fileID: 989797947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1776136628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776136622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c58203dc4327b45a821839ae7e468c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delta: -50
+  speed: 2
+  FreezeButton: {fileID: 1223934203}
 --- !u!1 &1824466383
 GameObject:
   m_ObjectHideFlags: 0
@@ -3241,7 +3366,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: HINT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3631,6 +3756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: -1
   rotateSpeed: 80
+  FreezeButton: {fileID: 0}
 --- !u!61 &2036203845
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3942,7 +4068,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a469110ca356340b29eed9565b5a0a2c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 733ba073dcfa5411f9ede23c365638cb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3979,7 +4105,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 66, y: 10.018}
-  m_SizeDelta: {x: 46.702698, y: 44.40027}
+  m_SizeDelta: {x: 75, y: 40}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &2139025396
 GameObject:
@@ -4112,6 +4238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: -1
   rotateSpeed: 80
+  FreezeButton: {fileID: 0}
 --- !u!61 &2140429289
 BoxCollider2D:
   m_ObjectHideFlags: 0
