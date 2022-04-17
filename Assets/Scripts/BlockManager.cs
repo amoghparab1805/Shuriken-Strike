@@ -23,6 +23,8 @@ public class BlockManager : MonoBehaviour
 
     public static bool pup=false;
 
+    int playerCount = PlayerController.playerCount;
+
     public static Dictionary<string, object> which_enemy_killed_dict = new Dictionary<string, object>();
     public static Dictionary<string, object> powerup_analytics = new Dictionary<string, object>();
     // PlayerController pc;
@@ -123,9 +125,21 @@ public class BlockManager : MonoBehaviour
         FindObjectOfType<PlayerController>().OnMouseClick+=resetLevel;
     }
 
+    void Update(){
+        playerCount = PlayerController.playerCount;
+        // if(PlayerController.playerCount<=1){
+        //     FindObjectOfType<PlayerController>().OnMouseClick+=resetLevel;
+        // }
+    }
+
     void resetLevel() {
-        send_level_enemy_killed();
-        Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
+        playerCount -= 1;
+        PlayerController.playerCount = playerCount;
+        Debug.Log("Player COUNT Block Manager: " + playerCount);
+        if(playerCount<1){
+            send_level_enemy_killed();
+            Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
+        }
     }
     void decreseBlockCount(string s) {
         which_enemy_killed_dict[s]=1;
@@ -252,7 +266,9 @@ public class BlockManager : MonoBehaviour
     }
 
     public void AfterLevelWin() {
-        coins += winAmount;
+        PlayerController.playerCount = 1;
+        coins += 10;
+        // coins += winAmount;
         PlayerPrefs.SetInt("totalCoins", coins);
         Debug.Log(coins);
     }

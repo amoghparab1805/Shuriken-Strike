@@ -1,16 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class rotateObject : MonoBehaviour
 {
     
     public int angle = -1;
     public float rotateSpeed = 80f;
+
+
+    public Button FreezeButton;
+    bool isFreezed;
+    Rigidbody2D rigidbody;
+    private Vector3 startPos;
+
+    void Start()
+    {
+        isFreezed = false;
+        if(FreezeButton){
+            FreezeButton.onClick.AddListener(freezeObjects);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        RotateLeft();        
+        if(!isFreezed){
+            RotateLeft();    
+        }
+        else{
+            FreezeButton.interactable = false;
+        }
     }
     void RotateLeft()
     {
@@ -21,4 +42,8 @@ public class rotateObject : MonoBehaviour
     // {
     //     angle = 0;
     // }
+    void freezeObjects()
+    {
+        isFreezed = true;
+    }
 }

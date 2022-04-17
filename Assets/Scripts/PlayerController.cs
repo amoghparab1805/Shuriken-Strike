@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
 
@@ -25,11 +26,27 @@ public class PlayerController : MonoBehaviour
     bool hitBlock;
 
     PlayerVFX playerVFX;
+
+    public Button AdditionalShot;
+
+    bool isAddShot;
+    public static int playerCount;
     
     void Start()
     {
         changePlayerState(false);
         getComponents();
+        playerCount = 1;
+        isAddShot = false;
+        if(AdditionalShot){
+            AdditionalShot.onClick.AddListener(addPlayer);
+        }
+    }
+
+    void addPlayer(){
+        isAddShot = true;
+        playerCount = 2;
+        Debug.Log("Player Count Clicked: " + playerCount);
     }
 
     void getComponents() {
@@ -42,6 +59,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(isAddShot){
+            AdditionalShot.interactable = false;
+        }
         lastvelocity = rigidbody2D.velocity;
         // Debug.Log("Update");
         handleMovement();
@@ -91,7 +111,7 @@ public class PlayerController : MonoBehaviour
             // Debug.Log("Moved "++" Clicked "+ clickedPosVector);
             // Vector2 
             if(clickedPosVector.x == 0 || clickedPosVector.y == 0) return;
-            if(Vector3.Distance(held, clickedPosVector)>16) {
+            if(Vector3.Distance(held, clickedPosVector)>8) {
                 resetPlayerPosition();
                 playerVFX.changeActiveDots(true);
                 playerVFX.changeTrailState(false, 0f);
@@ -103,7 +123,7 @@ public class PlayerController : MonoBehaviour
         if(inputData.isReleased) {
             releasedPosVector = mainCam.ScreenToWorldPoint(Input.mousePosition);
             releasedPosVector = new Vector3(releasedPosVector.x, releasedPosVector.y, 0f);
-            // Debug.Log("Done Jay bbay "+releasedPosVector);
+            Debug.Log("Done Jay bbay "+releasedPosVector);
             // Debug.Log("Done Jay bbay girl"+clickedPosVector);
             // Debug.Log(Vector3.Distance(releasedPosVector, clickedPosVector));
             playerVFX.changeActiveDots(false);
@@ -112,7 +132,7 @@ public class PlayerController : MonoBehaviour
             // Debug.Log("circleCollider trigger is false now");
             playerVFX.changeTrailState(true, 0.75f);
             if(clickedPosVector.x == 0 || clickedPosVector.y == 0) return;
-            if(Vector3.Distance(releasedPosVector, clickedPosVector)>16) {
+            if(Vector3.Distance(releasedPosVector, clickedPosVector)>8) {
                 showstartKilling=true;
                 // Debug.Log("REleased ball");
                 // circleCollider.isTrigger=false;
@@ -208,32 +228,43 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnBecameInvisible() {
+
+        Debug.Log("Player Count: " + playerCount);
+        // playerCount -= 1;
+        // Debug.Log("Player Count U: " + playerCount);
         
-            
-        if(!ResetBtn.quitGame){
-            if(BlockManager.blockCount>0){
-                // Debug.Log(BlockManager.blockCount);
-                // Debug.Log("PPPPPPPPPPPPPPPPPPPPP");
-
-                BlockManager.send_level_enemy_killed();
-                // BlockManager.send_level_completion_time();
-
-                if (BlockManager.pup){
-                    BlockManager.send_power_ups_used();
-                    BlockManager.pup=false;
-                }
-                BlockManager.send_which_enemy_killed();
-
-
-                Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
+        if(playerCount > 1){
+            if(ResetBtn.quitGame){
+                // Debug.Log("QQQQQQQQQ");
+                ResetBtn.quitGame = false;
             }
         }
-        else if(ResetBtn.quitGame){
-            // Debug.Log("QQQQQQQQQ");
-            ResetBtn.quitGame = false;
+        else{
+            
+            if(!ResetBtn.quitGame){
+                if(BlockManager.blockCount>0){
+                    // Debug.Log(BlockManager.blockCount);
+                    // Debug.Log("PPPPPPPPPPPPPPPPPPPPP");
+
+                    BlockManager.send_level_enemy_killed();
+                    // BlockManager.send_level_completion_time();
+
+                    if (BlockManager.pup){
+                        BlockManager.send_power_ups_used();
+                        BlockManager.pup=false;
+                    }
+                    BlockManager.send_which_enemy_killed();
+
+                    playerCount = 1;
+
+                    Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
+                }
+            }
+            else if(ResetBtn.quitGame){
+                // Debug.Log("QQQQQQQQQ");
+                ResetBtn.quitGame = false;
+            }
         }
-
-
     }
     
 }
