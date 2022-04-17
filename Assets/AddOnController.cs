@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class AddOnController : MonoBehaviour
 {
     public Button FreezeButton;
+    public Button AddShotButton;
     public Button HintButton;
     public SpriteRenderer startingPoint;
     // Start is called before the first frame update
@@ -18,19 +19,21 @@ public class AddOnController : MonoBehaviour
         }
         // startingPoint = GetComponent<SpriteRenderer>();
         // startingPoint.enabled = false;
-        if(coins>=10){
+        if(coins>=30){
             FreezeButton.interactable = true;
         }
         else{
             FreezeButton.interactable = false;
         }
         FreezeButton.onClick.AddListener(() => updateCoins(10));
-        // if(coins>=10){
-        //     AddOn2.interactable = true;
-        // }
-        // else{
-        //     AddOn2.interactable = false;
-        // }
+        
+        if(coins>=40){
+            AddShotButton.interactable = true;
+        }
+        else{
+            AddShotButton.interactable = false;
+        }
+        AddShotButton.onClick.AddListener(() => updateCoins(30));
         // if(coins>=10){
         //     AddOn3.interactable = true;
         // }
@@ -50,12 +53,14 @@ public class AddOnController : MonoBehaviour
             FreezeButton.interactable = false;
         }
         HintButton.onClick.AddListener(showHint);
-        // if(coins>=10){
-        //     AddOn2.interactable = true;
-        // }
-        // else{
-        //     AddOn2.interactable = false;
-        // }
+        
+        if(coins>=30){
+            AddShotButton.interactable = true;
+        }
+        else{
+            AddShotButton.interactable = false;
+        }
+        AddShotButton.onClick.AddListener(() => updateCoins(30));
         // if(coins>=10){
         //     AddOn3.interactable = true;
         // }
