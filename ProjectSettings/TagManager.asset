@@ -13,6 +13,8 @@ TagManager:
   - obstacle
   - bullet
   - bg
+  - shieldDestroy
+  - shield
   layers:
   - Default
   - TransparentFX

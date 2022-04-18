@@ -135,11 +135,13 @@ public class BlockManager : MonoBehaviour
     void resetLevel() {
         playerCount -= 1;
         PlayerController.playerCount = playerCount;
-        Debug.Log("Player COUNT Block Manager: " + playerCount);
+        // Debug.Log("Player COUNT Block Manager: " + playerCount);
         if(playerCount<1){
             send_level_enemy_killed();
             Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
         }
+        PlayerController.isShieldUp=true;
+        PlayerController.shieldDestroyer=false;
     }
     void decreseBlockCount(string s) {
         which_enemy_killed_dict[s]=1;

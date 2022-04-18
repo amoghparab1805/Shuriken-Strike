@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6704201761344486312}
   - component: {fileID: 6704201761344486292}
   - component: {fileID: 6704201761344486293}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: l3_enemy_1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -145,3 +145,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2651a95a8d125824984ed5d049d099dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  killSound: {fileID: 0}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6452301222493435866}
   - component: {fileID: 6108027827900538118}
   - component: {fileID: 8068837422529767783}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: l2_enemy_2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -330767697
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 46fb40e84a5d24fd6961b7a5af620bc6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -152,3 +152,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2651a95a8d125824984ed5d049d099dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  killSound: {fileID: 0}
