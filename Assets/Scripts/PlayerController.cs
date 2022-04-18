@@ -25,12 +25,16 @@ public class PlayerController : MonoBehaviour
     public bool showstartKilling = false;
     bool hitBlock;
 
+    bool enterOne=false;
     PlayerVFX playerVFX;
 
     public Button AdditionalShot;
 
     bool isAddShot;
     public static int playerCount;
+
+    public static bool isShieldUp = true;
+    public static bool shieldDestroyer = false;
     
     void Start()
     {
@@ -46,7 +50,7 @@ public class PlayerController : MonoBehaviour
     void addPlayer(){
         isAddShot = true;
         playerCount = 2;
-        Debug.Log("Player Count Clicked: " + playerCount);
+        // Debug.Log("Player Count Clicked: " + playerCount);
     }
 
     void getComponents() {
@@ -73,7 +77,9 @@ public class PlayerController : MonoBehaviour
            changePlayerState(true);
             // Debug.Log("isPressed ");
             // gameObj.active = true;
-            circleCollider.isTrigger=true;
+             circleCollider.enabled = false;
+
+            // circleCollider.isTrigger=true;
             // Debug.Log("It's a collider "+true);
             hitBlock = checkIfHitBlock();
             // Debug.Log("Hit Block"+hitBlock);
@@ -123,24 +129,28 @@ public class PlayerController : MonoBehaviour
         if(inputData.isReleased) {
             releasedPosVector = mainCam.ScreenToWorldPoint(Input.mousePosition);
             releasedPosVector = new Vector3(releasedPosVector.x, releasedPosVector.y, 0f);
-            Debug.Log("Done Jay bbay "+releasedPosVector);
+            
             // Debug.Log("Done Jay bbay girl"+clickedPosVector);
             // Debug.Log(Vector3.Distance(releasedPosVector, clickedPosVector));
             playerVFX.changeActiveDots(false);
             calculateDirection();
-            circleCollider.isTrigger=false;
+            // circleCollider.isTrigger=false;
             // Debug.Log("circleCollider trigger is false now");
             playerVFX.changeTrailState(true, 0.75f);
             if(clickedPosVector.x == 0 || clickedPosVector.y == 0) return;
             if(Vector3.Distance(releasedPosVector, clickedPosVector)>8) {
                 showstartKilling=true;
-                // Debug.Log("REleased ball");
+                 circleCollider.enabled = true;
+
+
+                Debug.Log("isKinematic true");
                 // circleCollider.isTrigger=false;
                 // Debug.Log("It's a /collider "+false);
                 movePlayerInDirection();
             }
             else {
                 showstartKilling=false;
+                circleCollider.enabled = false;
                 transform.position = new Vector3(clickedPosVector.x, clickedPosVector.y, -100f);
             }
                 
@@ -183,10 +193,72 @@ public class PlayerController : MonoBehaviour
         b.transform.position = new Vector3(x, y, 0f);
     }
 
+    void OnCollisionStay2D(Collision2D other) {
+        Debug.Log("OnCollisionStay2D im here");
+        if(!enterOne) {
+            if (other.gameObject.CompareTag("Block") || other.gameObject.CompareTag("Wall"))
+        {
+            // Debug.Log("JDL");
+            Vector2 wallNormal = other.contacts[0].normal;
+            directionPosVector = Vector2.Reflect(rigidbody2D.velocity, wallNormal).normalized;
+
+            rigidbody2D.velocity = directionPosVector * moveSpeed;
+
+        }
+        if (other.gameObject.tag == "Powerup")
+        {
+            BlockManager.increasePowerUpCount();
+            float x = other.gameObject.transform.position.x;
+            Destroy(other.gameObject);
+            shootup(other.transform.position.x, other.transform.position.y);
+            shootdown(other.transform.position.x, other.transform.position.y);
+            var speed = lastvelocity.magnitude;
+            var direction = lastvelocity.normalized;
+            rigidbody2D.velocity = direction * Mathf.Max(speed, 0f);
+        }
+
+        if (other.gameObject.tag == "obstacle")
+        {
+            var speed = lastvelocity.magnitude;
+            var direction = Vector3.Reflect(lastvelocity.normalized, other.contacts[0].normal);
+            rigidbody2D.velocity = direction * Mathf.Max(speed, 0f);
+        }
+
+        if(other.gameObject.tag == "shieldDestroy")
+        {
+            shieldDestroyer = true;
+            var speed = lastvelocity.magnitude;
+            var direction = lastvelocity.normalized;
+            rigidbody2D.velocity = direction * Mathf.Max(speed, 0f);
+        }
+
+        if(other.gameObject.tag == "shield")
+        {
+            if (isShieldUp && !shieldDestroyer)
+            {
+                var direction = lastvelocity.normalized;
+                rigidbody2D.velocity = direction * 0f;
+                Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
+                isShieldUp=true;
+            } else {
+                if(shieldDestroyer) {
+                    isShieldUp=false;
+                    Vector2 wallNormal = other.contacts[0].normal;
+                    directionPosVector = Vector2.Reflect(rigidbody2D.velocity, wallNormal).normalized;
+
+                    rigidbody2D.velocity = directionPosVector * moveSpeed;
+                }
+            }
+            
+        }
+        Debug.Log("OnCollisionStay2D from player");
+        }
+        
+    }
     void OnCollisionEnter2D(Collision2D other)
     {
-        // Debug.Log(velocity+" JDL");
-        // if(!velocity) return;
+        Debug.Log("OnCollisionEnter2D from player");
+        enterOne=true;
         if (other.gameObject.CompareTag("Block") || other.gameObject.CompareTag("Wall"))
         {
             // Debug.Log("JDL");
@@ -214,7 +286,36 @@ public class PlayerController : MonoBehaviour
             var direction = Vector3.Reflect(lastvelocity.normalized, other.contacts[0].normal);
             rigidbody2D.velocity = direction * Mathf.Max(speed, 0f);
         }
+
+        if(other.gameObject.tag == "shieldDestroy")
+        {
+            shieldDestroyer = true;
+            var speed = lastvelocity.magnitude;
+            var direction = lastvelocity.normalized;
+            rigidbody2D.velocity = direction * Mathf.Max(speed, 0f);
+        }
+
+        if(other.gameObject.tag == "shield")
+        {
+            if (isShieldUp && !shieldDestroyer)
+            {
+                var direction = lastvelocity.normalized;
+                rigidbody2D.velocity = direction * 0f;
+                Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
+            } else {
+                if(shieldDestroyer) {
+                    isShieldUp=false;
+                    Vector2 wallNormal = other.contacts[0].normal;
+                    directionPosVector = Vector2.Reflect(rigidbody2D.velocity, wallNormal).normalized;
+
+                    rigidbody2D.velocity = directionPosVector * moveSpeed;
+                }
+            }
+            
+        }
     }
+
+    
 
     bool checkIfHitBlock() {
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
@@ -229,10 +330,11 @@ public class PlayerController : MonoBehaviour
 
     void OnBecameInvisible() {
 
-        Debug.Log("Player Count: " + playerCount);
+        // Debug.Log("Player Count: " + playerCount);
         // playerCount -= 1;
         // Debug.Log("Player Count U: " + playerCount);
-        
+        isShieldUp=true;
+        shieldDestroyer=false;
         if(playerCount > 1){
             if(ResetBtn.quitGame){
                 // Debug.Log("QQQQQQQQQ");
@@ -258,6 +360,7 @@ public class PlayerController : MonoBehaviour
                     playerCount = 1;
 
                     Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
+                    
                 }
             }
             else if(ResetBtn.quitGame){

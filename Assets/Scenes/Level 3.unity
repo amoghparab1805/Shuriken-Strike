@@ -235,6 +235,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: l3_enemy_2
       objectReference: {fileID: 0}
+    - target: {fileID: 6704201761344486313, guid: 4dfcae4fb918e417ca5a6826ec543d18, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dfcae4fb918e417ca5a6826ec543d18, type: 3}
 --- !u!1 &36608021
@@ -2706,7 +2710,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1422330052
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -29,8 +29,8 @@ public class PlayerVFX : MonoBehaviour
     }
 
     public void setDotPosition(Vector3 startPos, Vector3 endPos) {
-        Debug.Log("startPos "+startPos);
-        Debug.Log("endPos "+endPos);
+        // Debug.Log("startPos "+startPos);
+        // Debug.Log("endPos "+endPos);
         for(int i=0; i<dotAmount; i++) {
             Vector3 targetPos = Vector2.Lerp(startPos, 2*startPos-endPos, i*dotGap);
             dotArray[i].transform.position = targetPos;
