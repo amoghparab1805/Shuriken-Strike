@@ -1987,7 +1987,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shield: {fileID: 1950070861}
-  activeShield: 0
 --- !u!1 &1834478901
 GameObject:
   m_ObjectHideFlags: 0
@@ -2182,7 +2181,7 @@ SpriteRenderer:
   m_Size: {x: 6.86, y: 6.86}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1946912146
@@ -2282,7 +2281,7 @@ SpriteRenderer:
   m_Size: {x: 6.86, y: 6.86}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1950070864
@@ -2573,4 +2572,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shield: {fileID: 1946912143}
-  activeShield: 0
