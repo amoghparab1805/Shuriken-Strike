@@ -24,6 +24,7 @@ public class AddOnController : MonoBehaviour
         }
         else{
             FreezeButton.interactable = false;
+            FreezeButton.enabled = false;
         }
         FreezeButton.onClick.AddListener(() => updateCoins(20));
         
@@ -32,6 +33,7 @@ public class AddOnController : MonoBehaviour
         }
         else{
             AddShotButton.interactable = false;
+            AddShotButton.enabled = false;
         }
         AddShotButton.onClick.AddListener(() => updateCoins(40));
         // if(coins>=10){
@@ -51,6 +53,7 @@ public class AddOnController : MonoBehaviour
         }
         else{
             FreezeButton.interactable = false;
+            FreezeButton.enabled = false;
         }
 
         HintButton.onClick.AddListener(showHint);
@@ -60,6 +63,7 @@ public class AddOnController : MonoBehaviour
         }
         else{
             AddShotButton.interactable = false;
+            AddShotButton.enabled = false;
         }
         // if(coins>=10){
         //     AddOn3.interactable = true;

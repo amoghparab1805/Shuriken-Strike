@@ -30,6 +30,7 @@ public class moveEnemy : MonoBehaviour
         }
         else{
             FreezeButton.interactable = false;
+            FreezeButton.enabled = false;
         }
     }
     void freezeObjects()
