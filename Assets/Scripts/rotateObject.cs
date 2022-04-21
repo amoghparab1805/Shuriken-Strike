@@ -31,6 +31,7 @@ public class rotateObject : MonoBehaviour
         }
         else{
             FreezeButton.interactable = false;
+            FreezeButton.enabled = false;
         }
     }
     void RotateLeft()

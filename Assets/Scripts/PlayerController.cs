@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
     {
         if(isAddShot){
             AdditionalShot.interactable = false;
+            AdditionalShot.enabled = false;
         }
         lastvelocity = rigidbody2D.velocity;
         // Debug.Log("Update");
