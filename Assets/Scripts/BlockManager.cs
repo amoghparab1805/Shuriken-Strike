@@ -39,7 +39,7 @@ public class BlockManager : MonoBehaviour
         int level = SceneManager.GetActiveScene().buildIndex-1;
         which_enemy_killed_dict.Clear();
         which_enemy_killed_dict.Add("Level", SceneManager.GetActiveScene().buildIndex-1);
-        coins = PlayerPrefs.GetInt("totalCoins");
+        // coins = PlayerPrefs.GetInt("totalCoins");
 
         foreach (Block b in blockArray) 
           {
@@ -269,7 +269,7 @@ public class BlockManager : MonoBehaviour
 
     public void AfterLevelWin() {
         PlayerController.playerCount = 1;
-        coins += 10;
+        coins = PlayerPrefs.GetInt("totalCoins") + 10;
         // coins += winAmount;
         PlayerPrefs.SetInt("totalCoins", coins);
         Debug.Log(coins);
