@@ -55,21 +55,30 @@ public class BlockManager : MonoBehaviour
             }
           }
 
-        if (level==7){
+        // if (level==15){
+        //     powerup_analytics.Clear();
+        //     // Debug.Log("In level 7");
+        //     pup=true;
+        //     powerup_analytics.Add("Level", SceneManager.GetActiveScene().buildIndex-1);
+        //     powerup_analytics.Add("powerups_available", 2);
+        //     powerup_analytics.Add("powerups_used", 0);
+        // }
+
+        if (level==15){
             powerup_analytics.Clear();
             // Debug.Log("In level 7");
             pup=true;
             powerup_analytics.Add("Level", SceneManager.GetActiveScene().buildIndex-1);
-            powerup_analytics.Add("powerups_available", 2);
+            powerup_analytics.Add("powerups_available", 1);
             powerup_analytics.Add("powerups_used", 0);
         }
 
-        if (level==8){
+        if (level==16){
             // Debug.Log("In level 8");
             powerup_analytics.Clear();
             pup=true;
             powerup_analytics.Add("Level", SceneManager.GetActiveScene().buildIndex-1);
-            powerup_analytics.Add("powerups_available", 1);
+            powerup_analytics.Add("powerups_available", 2);
             powerup_analytics.Add("powerups_used", 0);
         }
         // Debug.Log(which_enemy_killed_dict.Count);
