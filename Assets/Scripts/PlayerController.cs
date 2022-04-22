@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public event Action OnMouseClick;
+    public Animator powerup_animation;
 
     public InputData inputData;
     public BlockManager bm;
@@ -210,6 +211,10 @@ public class PlayerController : MonoBehaviour
         {
             BlockManager.increasePowerUpCount();
             float x = other.gameObject.transform.position.x;
+            //Add animation here
+            Debug.Log("Setting trigger");
+            powerup_animation.SetTrigger("powerup_animation_trigger");
+
             Destroy(other.gameObject);
             shootup(other.transform.position.x, other.transform.position.y);
             shootdown(other.transform.position.x, other.transform.position.y);
