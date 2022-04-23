@@ -1834,6 +1834,10 @@ PrefabInstance:
       propertyPath: killSound
       value: 
       objectReference: {fileID: 12605416}
+    - target: {fileID: 6807393260806313955, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
+      propertyPath: enemy_killed_animation
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6807393260806313959, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
       propertyPath: m_Name
       value: l6_enemy_1
@@ -1992,7 +1996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &855635648
 RectTransform:
   m_ObjectHideFlags: 0
