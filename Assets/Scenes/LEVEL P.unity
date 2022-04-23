@@ -1922,7 +1922,7 @@ GameObject:
   - component: {fileID: 994510299}
   - component: {fileID: 994510298}
   - component: {fileID: 994510297}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: obstacle (3)
   m_TagString: obstacle
   m_Icon: {fileID: 0}
@@ -2071,7 +2071,7 @@ GameObject:
   - component: {fileID: 1002968056}
   - component: {fileID: 1002968055}
   - component: {fileID: 1002968054}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: obstacle (1)
   m_TagString: obstacle
   m_Icon: {fileID: 0}
@@ -2482,6 +2482,9 @@ MonoBehaviour:
   collideWithLayer:
     serializedVersion: 2
     m_Bits: 8
+  collideWithWall:
+    serializedVersion: 2
+    m_Bits: 128
   moveSpeed: 200
   hitPoint: 5
   bullet: {fileID: 6630647429534659190, guid: c7440790af54f41b4bdda6a7ac6a44c0, type: 3}
@@ -3373,7 +3376,7 @@ GameObject:
   - component: {fileID: 1717452726}
   - component: {fileID: 1717452725}
   - component: {fileID: 1717452724}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: obstacle (2)
   m_TagString: obstacle
   m_Icon: {fileID: 0}
@@ -3548,7 +3551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1834478902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3936,7 +3939,7 @@ GameObject:
   - component: {fileID: 2036203845}
   - component: {fileID: 2036203844}
   - component: {fileID: 2036203843}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: obstacle (4)
   m_TagString: obstacle
   m_Icon: {fileID: 0}
@@ -4358,7 +4361,7 @@ GameObject:
   - component: {fileID: 2140429289}
   - component: {fileID: 2140429288}
   - component: {fileID: 2140429287}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: obstacle (5)
   m_TagString: obstacle
   m_Icon: {fileID: 0}

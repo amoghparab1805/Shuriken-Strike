@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public BlockManager bm;
     public GameObject gameObj;
     public LayerMask collideWithLayer;
+    public LayerMask collideWithWall;
     public float moveSpeed = 200f;
     public float hitPoint = 5f;
     public GameObject bullet;
@@ -25,8 +26,11 @@ public class PlayerController : MonoBehaviour
     CircleCollider2D circleCollider;
     public bool showstartKilling = false;
     bool hitBlock;
+    bool hitWall;
+    bool ifBallCanMove = false;
 
     bool enterOne=false;
+    bool enterWall = false;
     PlayerVFX playerVFX;
 
     public Button AdditionalShot;
@@ -84,10 +88,14 @@ public class PlayerController : MonoBehaviour
             // circleCollider.isTrigger=true;
             // Debug.Log("It's a collider "+true);
             hitBlock = checkIfHitBlock();
-            // Debug.Log("Hit Block"+hitBlock);
-            if(hitBlock) {
+            hitWall = checkIfHitWall();
+            Debug.Log("Hit Wall"+hitWall);
+            if(hitBlock || hitWall) {
+                ifBallCanMove=false;
                 // Debug.Log("Hit Block");
                 return;
+            } else {
+                ifBallCanMove=true;
             }
 
             clickedPosVector = mainCam.ScreenToWorldPoint(Input.mousePosition);
@@ -110,10 +118,14 @@ public class PlayerController : MonoBehaviour
 
         if(inputData.isHeld) {
             hitBlock = checkIfHitBlock();
-            // Debug.Log("Hit Block"+hitBlock);
-            if(hitBlock) {
+            hitWall = checkIfHitWall();
+            Debug.Log("Hit Wall"+hitWall);
+            if(hitBlock || hitWall) {
                 // Debug.Log("Hit Block");
+                ifBallCanMove=false;
                 return;
+            } else {
+                ifBallCanMove=true;
             }
             Vector3 held = new Vector3(mainCam.ScreenToWorldPoint(Input.mousePosition).x, mainCam.ScreenToWorldPoint(Input.mousePosition).y, 0f);
             // Debug.Log("Moved "++" Clicked "+ clickedPosVector);
@@ -149,6 +161,14 @@ public class PlayerController : MonoBehaviour
                 // circleCollider.isTrigger=false;
                 // Debug.Log("It's a /collider "+false);
                 movePlayerInDirection();
+                // if(ifBallCanMove) {
+                //     movePlayerInDirection();
+                // } else {
+                //     showstartKilling=false;
+                // circleCollider.enabled = false;
+                // transform.position = new Vector3(clickedPosVector.x, clickedPosVector.y, -100f);
+                // }
+                
             }
             else {
                 showstartKilling=false;
@@ -233,9 +253,9 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.tag == "shieldDestroy")
         {
             shieldDestroyer = true;
-            var speed = lastvelocity.magnitude;
-            var direction = lastvelocity.normalized;
-            rigidbody2D.velocity = direction * Mathf.Max(speed, 0f);
+            // var speed = lastvelocity.magnitude;
+            // var direction = lastvelocity.normalized;
+            // rigidbody2D.velocity = direction * moveSpeed;
         }
 
         if(other.gameObject.tag == "shield")
@@ -258,16 +278,25 @@ public class PlayerController : MonoBehaviour
             
         }
         Debug.Log("OnCollisionStay2D from player");
+        } else {
+            // if(other.gameObject.CompareTag("Wall") && !enterWall) {
+            //     enterWall=true;
+            //     Vector2 wallNormal = other.contacts[0].normal;
+            //     directionPosVector = Vector2.Reflect(rigidbody2D.velocity, wallNormal).normalized;
+
+            //     rigidbody2D.velocity = directionPosVector * moveSpeed;
+            // }
         }
         
     }
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("OnCollisionEnter2D from player");
+        Debug.Log("OnCollisionEnter2D from player "+other.gameObject.tag);
         enterOne=true;
         if (other.gameObject.CompareTag("Block") || other.gameObject.CompareTag("Wall"))
         {
-            // Debug.Log("JDL");
+            Debug.Log("Wall is on boisssssssssss");
+            // if(other.gameObject.CompareTag("Wall")) enterWall=true;
             Vector2 wallNormal = other.contacts[0].normal;
             directionPosVector = Vector2.Reflect(rigidbody2D.velocity, wallNormal).normalized;
 
@@ -304,9 +333,9 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.tag == "shieldDestroy")
         {
             shieldDestroyer = true;
-            var speed = lastvelocity.magnitude;
-            var direction = lastvelocity.normalized;
-            rigidbody2D.velocity = direction * Mathf.Max(speed, 0f);
+            // var speed = lastvelocity.magnitude;
+            // var direction = lastvelocity.normalized;
+            // rigidbody2D.velocity = direction * Mathf.Max(speed, 0f);
         }
 
         if(other.gameObject.tag == "shield")
@@ -334,6 +363,13 @@ public class PlayerController : MonoBehaviour
     bool checkIfHitBlock() {
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D hitBlock = Physics2D.Raycast(ray.origin, ray.direction, 100f, collideWithLayer);
+        // Debug.Log(hitBlock);
+        return hitBlock;
+    }
+
+    bool checkIfHitWall() {
+        Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit2D hitBlock = Physics2D.Raycast(ray.origin, ray.direction, 100f, collideWithWall);
         // Debug.Log(hitBlock);
         return hitBlock;
     }
