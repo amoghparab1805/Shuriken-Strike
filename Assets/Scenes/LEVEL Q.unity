@@ -1370,11 +1370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killSound: {fileID: 0}
-<<<<<<< HEAD
   enemy_killed_animation: {fileID: 600002822}
-=======
-  enemy_killed_animation: {fileID: 0}
->>>>>>> edbf32ab35bada671a11927462609f3928d21f9a
 --- !u!1 &635696932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2586,11 +2582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killSound: {fileID: 0}
-<<<<<<< HEAD
   enemy_killed_animation: {fileID: 926927715}
-=======
-  enemy_killed_animation: {fileID: 0}
->>>>>>> edbf32ab35bada671a11927462609f3928d21f9a
 --- !u!1 &1603436293
 GameObject:
   m_ObjectHideFlags: 0
