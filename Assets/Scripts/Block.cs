@@ -4,6 +4,7 @@ public class Block : MonoBehaviour
 {
 
     public AudioSource killSound;
+    [SerializeField] ParticleSystem enemy_killed_animation = null;
 
     public event Action onBeingHit;
     private ShieldEffect shield;
@@ -66,6 +67,7 @@ public class Block : MonoBehaviour
         else if(onBeingHit != null) {
             onBeingHit();
             killSound.Play();
+            enemy_killed_animation.Play();
             gameObject.SetActive(false);
         }
     }

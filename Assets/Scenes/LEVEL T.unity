@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &9772354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1934,7 +1934,7 @@ GameObject:
   - component: {fileID: 807468383}
   - component: {fileID: 807468382}
   - component: {fileID: 807468381}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: level-18-4
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2193,7 +2193,7 @@ GameObject:
   - component: {fileID: 899365033}
   - component: {fileID: 899365032}
   - component: {fileID: 899365031}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: level-18-1
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2466,12 +2466,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cef54599b6fa30478e116bd54c016e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerup_animation: {fileID: 0}
   inputData: {fileID: 11400000, guid: 996e94a672cdf4fc59c7ab70f1e8c779, type: 2}
   bm: {fileID: 0}
   gameObj: {fileID: 0}
   collideWithLayer:
     serializedVersion: 2
     m_Bits: 8
+  collideWithWall:
+    serializedVersion: 2
+    m_Bits: 128
   moveSpeed: 200
   hitPoint: 5
   bullet: {fileID: 0}
@@ -2712,7 +2716,7 @@ GameObject:
   - component: {fileID: 1342601103}
   - component: {fileID: 1342601102}
   - component: {fileID: 1342601101}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: level-18-3
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -4047,7 +4051,7 @@ GameObject:
   - component: {fileID: 2002773140}
   - component: {fileID: 2002773139}
   - component: {fileID: 2002773138}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: level-18-2
   m_TagString: Wall
   m_Icon: {fileID: 0}

@@ -532,7 +532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &238929100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1456,6 +1456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killSound: {fileID: 0}
+  enemy_killed_animation: {fileID: 0}
 --- !u!1 &635696932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,7 +1754,7 @@ GameObject:
   - component: {fileID: 966853814}
   - component: {fileID: 966853813}
   - component: {fileID: 966853812}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: obstacle
   m_TagString: obstacle
   m_Icon: {fileID: 0}
@@ -2154,12 +2155,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cef54599b6fa30478e116bd54c016e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerup_animation: {fileID: 0}
   inputData: {fileID: 11400000, guid: 996e94a672cdf4fc59c7ab70f1e8c779, type: 2}
   bm: {fileID: 0}
   gameObj: {fileID: 0}
   collideWithLayer:
     serializedVersion: 2
     m_Bits: 8
+  collideWithWall:
+    serializedVersion: 2
+    m_Bits: 128
   moveSpeed: 200
   hitPoint: 5
   bullet: {fileID: 6630647429534659190, guid: c7440790af54f41b4bdda6a7ac6a44c0, type: 3}
@@ -2977,6 +2982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killSound: {fileID: 0}
+  enemy_killed_animation: {fileID: 0}
 --- !u!1 &1603436293
 GameObject:
   m_ObjectHideFlags: 0
