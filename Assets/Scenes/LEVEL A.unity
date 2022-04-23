@@ -194,6 +194,9 @@ MonoBehaviour:
   collideWithLayer:
     serializedVersion: 2
     m_Bits: 8
+  collideWithWall:
+    serializedVersion: 2
+    m_Bits: 0
   moveSpeed: 200
   hitPoint: 5
   bullet: {fileID: 0}
@@ -342,7 +345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &108744750
 Transform:
   m_ObjectHideFlags: 0

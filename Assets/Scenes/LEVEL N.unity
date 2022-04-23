@@ -2061,6 +2061,9 @@ MonoBehaviour:
   collideWithLayer:
     serializedVersion: 2
     m_Bits: 8
+  collideWithWall:
+    serializedVersion: 2
+    m_Bits: 0
   moveSpeed: 130
   hitPoint: 5
   bullet: {fileID: 0}

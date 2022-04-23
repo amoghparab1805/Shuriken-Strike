@@ -1370,7 +1370,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killSound: {fileID: 0}
+<<<<<<< HEAD
   enemy_killed_animation: {fileID: 600002822}
+=======
+  enemy_killed_animation: {fileID: 0}
+>>>>>>> edbf32ab35bada671a11927462609f3928d21f9a
 --- !u!1 &635696932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1890,6 +1894,9 @@ MonoBehaviour:
   collideWithLayer:
     serializedVersion: 2
     m_Bits: 8
+  collideWithWall:
+    serializedVersion: 2
+    m_Bits: 0
   moveSpeed: 200
   hitPoint: 5
   bullet: {fileID: 6630647429534659190, guid: c7440790af54f41b4bdda6a7ac6a44c0, type: 3}
@@ -2579,7 +2586,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killSound: {fileID: 0}
+<<<<<<< HEAD
   enemy_killed_animation: {fileID: 926927715}
+=======
+  enemy_killed_animation: {fileID: 0}
+>>>>>>> edbf32ab35bada671a11927462609f3928d21f9a
 --- !u!1 &1603436293
 GameObject:
   m_ObjectHideFlags: 0

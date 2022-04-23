@@ -253,6 +253,22 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 313784611608698770, guid: 22e6947bf0de14405b8034787922fa1b, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6464529
+      objectReference: {fileID: 0}
+    - target: {fileID: 313784611608698770, guid: 22e6947bf0de14405b8034787922fa1b, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6409068
+      objectReference: {fileID: 0}
+    - target: {fileID: 313784611608698770, guid: 22e6947bf0de14405b8034787922fa1b, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.008035183
+      objectReference: {fileID: 0}
+    - target: {fileID: 313784611608698770, guid: 22e6947bf0de14405b8034787922fa1b, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.00790143
+      objectReference: {fileID: 0}
+    - target: {fileID: 313784611608698770, guid: 22e6947bf0de14405b8034787922fa1b, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.6
       objectReference: {fileID: 0}
@@ -1922,7 +1938,7 @@ GameObject:
   - component: {fileID: 994510299}
   - component: {fileID: 994510298}
   - component: {fileID: 994510297}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: obstacle (3)
   m_TagString: obstacle
   m_Icon: {fileID: 0}
@@ -2071,7 +2087,7 @@ GameObject:
   - component: {fileID: 1002968056}
   - component: {fileID: 1002968055}
   - component: {fileID: 1002968054}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: obstacle (1)
   m_TagString: obstacle
   m_Icon: {fileID: 0}
@@ -2482,6 +2498,9 @@ MonoBehaviour:
   collideWithLayer:
     serializedVersion: 2
     m_Bits: 8
+  collideWithWall:
+    serializedVersion: 2
+    m_Bits: 128
   moveSpeed: 200
   hitPoint: 5
   bullet: {fileID: 6630647429534659190, guid: c7440790af54f41b4bdda6a7ac6a44c0, type: 3}
@@ -2617,7 +2636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1193477153
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3373,7 +3392,7 @@ GameObject:
   - component: {fileID: 1717452726}
   - component: {fileID: 1717452725}
   - component: {fileID: 1717452724}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: obstacle (2)
   m_TagString: obstacle
   m_Icon: {fileID: 0}
@@ -3548,7 +3567,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1834478902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3936,7 +3955,7 @@ GameObject:
   - component: {fileID: 2036203845}
   - component: {fileID: 2036203844}
   - component: {fileID: 2036203843}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: obstacle (4)
   m_TagString: obstacle
   m_Icon: {fileID: 0}
@@ -4358,7 +4377,7 @@ GameObject:
   - component: {fileID: 2140429289}
   - component: {fileID: 2140429288}
   - component: {fileID: 2140429287}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: obstacle (5)
   m_TagString: obstacle
   m_Icon: {fileID: 0}
@@ -4552,6 +4571,14 @@ PrefabInstance:
     - target: {fileID: 6144591684486049392, guid: 3f5566755b82747d48e9371a2df28e82, type: 3}
       propertyPath: m_SortingOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641383427033144917, guid: 3f5566755b82747d48e9371a2df28e82, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6409073
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641383427033144917, guid: 3f5566755b82747d48e9371a2df28e82, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.01580286
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f5566755b82747d48e9371a2df28e82, type: 3}

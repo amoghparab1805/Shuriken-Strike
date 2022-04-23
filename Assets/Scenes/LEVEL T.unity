@@ -1938,7 +1938,7 @@ GameObject:
   - component: {fileID: 807468383}
   - component: {fileID: 807468382}
   - component: {fileID: 807468381}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: level-18-4
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2197,7 +2197,7 @@ GameObject:
   - component: {fileID: 899365033}
   - component: {fileID: 899365032}
   - component: {fileID: 899365031}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: level-18-1
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2539,6 +2539,9 @@ MonoBehaviour:
   collideWithLayer:
     serializedVersion: 2
     m_Bits: 8
+  collideWithWall:
+    serializedVersion: 2
+    m_Bits: 128
   moveSpeed: 200
   hitPoint: 5
   bullet: {fileID: 0}
@@ -2779,7 +2782,7 @@ GameObject:
   - component: {fileID: 1342601103}
   - component: {fileID: 1342601102}
   - component: {fileID: 1342601101}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: level-18-3
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -4176,7 +4179,7 @@ GameObject:
   - component: {fileID: 2002773140}
   - component: {fileID: 2002773139}
   - component: {fileID: 2002773138}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: level-18-2
   m_TagString: Wall
   m_Icon: {fileID: 0}

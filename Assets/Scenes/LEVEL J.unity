@@ -194,6 +194,9 @@ MonoBehaviour:
   collideWithLayer:
     serializedVersion: 2
     m_Bits: 8
+  collideWithWall:
+    serializedVersion: 2
+    m_Bits: 0
   moveSpeed: 200
   hitPoint: 5
   bullet: {fileID: 0}
@@ -4361,7 +4364,7 @@ RectTransform:
   - {fileID: 1207480980}
   - {fileID: 796882386}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
