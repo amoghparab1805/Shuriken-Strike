@@ -9,6 +9,9 @@ public class AddOnController : MonoBehaviour
     public Button AddShotButton;
     public Button HintButton;
     public SpriteRenderer startingPoint;
+    public SpriteRenderer startImage;
+    public SpriteRenderer hereImage;
+    public Image startArrow;
     // Start is called before the first frame update
     void Start()
     {
@@ -80,5 +83,10 @@ public class AddOnController : MonoBehaviour
 
     void showHint(){
         startingPoint.gameObject.SetActive(true);
+        if(startImage && hereImage && startArrow){
+            startImage.gameObject.SetActive(true);
+            hereImage.gameObject.SetActive(true);
+            startArrow.gameObject.SetActive(true);
+        }
     }
 }

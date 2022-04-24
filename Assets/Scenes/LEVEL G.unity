@@ -1360,6 +1360,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: freeze-button
       objectReference: {fileID: 0}
+    - target: {fileID: 2472887328605093721, guid: c55031ee9c994447c873e2067fd65ac5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c55031ee9c994447c873e2067fd65ac5, type: 3}
 --- !u!224 &561673408 stripped
@@ -2192,7 +2196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cef54599b6fa30478e116bd54c016e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerup_animation: {fileID: 0}
   inputData: {fileID: 11400000, guid: 996e94a672cdf4fc59c7ab70f1e8c779, type: 2}
   bm: {fileID: 0}
   gameObj: {fileID: 0}
@@ -2626,6 +2629,9 @@ MonoBehaviour:
   AddShotButton: {fileID: 2030880140}
   HintButton: {fileID: 261874995}
   startingPoint: {fileID: 2064740126}
+  startImage: {fileID: 0}
+  hereImage: {fileID: 0}
+  startArrow: {fileID: 0}
 --- !u!1001 &1518224176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3267,6 +3273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: -1
   rotateSpeed: 80
+  freeze_animation: {fileID: 0}
   FreezeButton: {fileID: 0}
 --- !u!212 &2064740126
 SpriteRenderer:

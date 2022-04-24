@@ -268,7 +268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &59920995
 RectTransform:
   m_ObjectHideFlags: 0
@@ -478,7 +478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &255587140
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1232,7 +1232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &545176692
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2179,6 +2179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: freeze-button
       objectReference: {fileID: 0}
+    - target: {fileID: 2472887328605093721, guid: c55031ee9c994447c873e2067fd65ac5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c55031ee9c994447c873e2067fd65ac5, type: 3}
 --- !u!224 &986091027 stripped
@@ -2352,7 +2356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cef54599b6fa30478e116bd54c016e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerup_animation: {fileID: 0}
   inputData: {fileID: 11400000, guid: 996e94a672cdf4fc59c7ab70f1e8c779, type: 2}
   bm: {fileID: 0}
   gameObj: {fileID: 0}
@@ -2423,6 +2426,7 @@ MonoBehaviour:
   delta: 275
   speed: 0.35
   FreezeButton: {fileID: 986091028}
+  freeze_animation: {fileID: 0}
 --- !u!1 &1244317044
 GameObject:
   m_ObjectHideFlags: 0
@@ -2668,6 +2672,9 @@ MonoBehaviour:
   AddShotButton: {fileID: 551724548}
   HintButton: {fileID: 554712935}
   startingPoint: {fileID: 1678041690}
+  startImage: {fileID: 0}
+  hereImage: {fileID: 0}
+  startArrow: {fileID: 0}
 --- !u!1 &1678041688
 GameObject:
   m_ObjectHideFlags: 0
@@ -2700,6 +2707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: -1
   rotateSpeed: 80
+  freeze_animation: {fileID: 0}
   FreezeButton: {fileID: 0}
 --- !u!212 &1678041690
 SpriteRenderer:
@@ -2892,7 +2900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1855384918
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2971,6 +2979,7 @@ MonoBehaviour:
   delta: 275
   speed: 0.35
   FreezeButton: {fileID: 986091028}
+  freeze_animation: {fileID: 0}
 --- !u!1001 &2143066153
 PrefabInstance:
   m_ObjectHideFlags: 0

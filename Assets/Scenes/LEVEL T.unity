@@ -390,7 +390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &88600791
 RectTransform:
   m_ObjectHideFlags: 0
@@ -544,7 +544,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &195260609
 MonoBehaviour:
@@ -574,6 +574,9 @@ MonoBehaviour:
   AddShotButton: {fileID: 443165229}
   HintButton: {fileID: 615658991}
   startingPoint: {fileID: 1469864413}
+  startImage: {fileID: 0}
+  hereImage: {fileID: 0}
+  startArrow: {fileID: 0}
 --- !u!1 &221137971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,7 +1713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &675133937
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1778,7 +1781,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7278150908185139120, guid: 426266bedfdbc47cdb217de5c469f4c1, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7278150908185139120, guid: 426266bedfdbc47cdb217de5c469f4c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2058,7 +2061,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &867396408
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2310,7 +2313,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4642332973624995012, guid: 50f1679cb448548f2bbc4146cb1c102d, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4642332973624995012, guid: 50f1679cb448548f2bbc4146cb1c102d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2532,7 +2535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cef54599b6fa30478e116bd54c016e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerup_animation: {fileID: 0}
   inputData: {fileID: 11400000, guid: 996e94a672cdf4fc59c7ab70f1e8c779, type: 2}
   bm: {fileID: 0}
   gameObj: {fileID: 0}
@@ -3074,7 +3076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1467738197
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3165,6 +3167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: -1
   rotateSpeed: 80
+  freeze_animation: {fileID: 0}
   FreezeButton: {fileID: 0}
 --- !u!212 &1469864413
 SpriteRenderer:
@@ -3927,7 +3930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1787116862
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4003,7 +4006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1918122886
 RectTransform:
   m_ObjectHideFlags: 0
