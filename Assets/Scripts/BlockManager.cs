@@ -81,6 +81,15 @@ public class BlockManager : MonoBehaviour
             powerup_analytics.Add("powerups_available", 2);
             powerup_analytics.Add("powerups_used", 0);
         }
+
+        if (level==19){
+            // Debug.Log("In level 8");
+            powerup_analytics.Clear();
+            pup=true;
+            powerup_analytics.Add("Level", SceneManager.GetActiveScene().buildIndex-1);
+            powerup_analytics.Add("powerups_available", 1);
+            powerup_analytics.Add("powerups_used", 0);
+        }
         // Debug.Log(which_enemy_killed_dict.Count);
         SubscribeToEvent();
     }

@@ -187,7 +187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cef54599b6fa30478e116bd54c016e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerup_animation: {fileID: 0}
   inputData: {fileID: 11400000, guid: 996e94a672cdf4fc59c7ab70f1e8c779, type: 2}
   bm: {fileID: 0}
   gameObj: {fileID: 0}
@@ -3294,7 +3293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3988c7b4cac9476495a74242f743be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FreezeButton: {fileID: 0}
+  FreezeButton: {fileID: 1931972538}
   AddShotButton: {fileID: 576510003}
   HintButton: {fileID: 1625630110}
   startingPoint: {fileID: 2052888963}
@@ -4470,6 +4469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: -1
   rotateSpeed: 80
+  freeze_animation: {fileID: 0}
   FreezeButton: {fileID: 0}
 --- !u!212 &2052888963
 SpriteRenderer:
