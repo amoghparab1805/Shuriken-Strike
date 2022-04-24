@@ -143,7 +143,7 @@ MonoBehaviour:
   delta: -50
   speed: 2
   FreezeButton: {fileID: 1046578797}
-  freeze_animation: {fileID: 0}
+  freeze_animation: {fileID: 1587869103}
 --- !u!1001 &182861051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1035,7 +1035,7 @@ MonoBehaviour:
   delta: 120
   speed: 0.75
   FreezeButton: {fileID: 1046578797}
-  freeze_animation: {fileID: 0}
+  freeze_animation: {fileID: 1587869103}
 --- !u!1 &573860437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,7 +1479,7 @@ MonoBehaviour:
   delta: 120
   speed: 0.75
   FreezeButton: {fileID: 1046578797}
-  freeze_animation: {fileID: 0}
+  freeze_animation: {fileID: 1587869103}
 --- !u!1 &879417729 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6807393260806313959, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
@@ -1500,7 +1500,7 @@ MonoBehaviour:
   delta: 50
   speed: 2
   FreezeButton: {fileID: 1046578797}
-  freeze_animation: {fileID: 0}
+  freeze_animation: {fileID: 1587869103}
 --- !u!1 &885143973 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6807393260806313959, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
@@ -1521,7 +1521,7 @@ MonoBehaviour:
   delta: 50
   speed: 2
   FreezeButton: {fileID: 1046578797}
-  freeze_animation: {fileID: 0}
+  freeze_animation: {fileID: 1587869103}
 --- !u!1 &895955635
 GameObject:
   m_ObjectHideFlags: 0
@@ -3376,6 +3376,68 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!1001 &1587869102
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_RootOrder
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 530
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 544
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.8644264
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069743, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_Name
+      value: freeze_animation
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+--- !u!198 &1587869103 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5715587338624069737, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+  m_PrefabInstance: {fileID: 1587869102}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1600620404
 GameObject:
   m_ObjectHideFlags: 0
@@ -3857,7 +3919,7 @@ MonoBehaviour:
   delta: -50
   speed: 2
   FreezeButton: {fileID: 1046578797}
-  freeze_animation: {fileID: 0}
+  freeze_animation: {fileID: 1587869103}
 --- !u!1 &1834478901
 GameObject:
   m_ObjectHideFlags: 0

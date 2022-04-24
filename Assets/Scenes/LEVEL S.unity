@@ -1044,6 +1044,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
+--- !u!1 &530407018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6807393260806313959, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
+  m_PrefabInstance: {fileID: 530407017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &530407019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530407018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c58203dc4327b45a821839ae7e468c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delta: -40
+  speed: 2.5
+  FreezeButton: {fileID: 561673409}
+  freeze_animation: {fileID: 45924148}
 --- !u!1001 &561673407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2728,7 +2749,7 @@ MonoBehaviour:
   delta: 125
   speed: 0.5
   FreezeButton: {fileID: 0}
-  freeze_animation: {fileID: 0}
+  freeze_animation: {fileID: 45924148}
 --- !u!1001 &1518224176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3151,6 +3172,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6807393260806313955, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
+      propertyPath: isMoving
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6807393260806313955, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
       propertyPath: killSound
       value: 
       objectReference: {fileID: 746891067}
@@ -3164,6 +3189,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
+--- !u!1 &1652060208 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6807393260806313959, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
+  m_PrefabInstance: {fileID: 1652060207}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1652060209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652060208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c58203dc4327b45a821839ae7e468c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delta: 40
+  speed: 2.5
+  FreezeButton: {fileID: 561673409}
+  freeze_animation: {fileID: 45924148}
 --- !u!1 &1706007031
 GameObject:
   m_ObjectHideFlags: 0
