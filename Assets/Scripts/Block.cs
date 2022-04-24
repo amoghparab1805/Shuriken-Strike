@@ -7,6 +7,7 @@ public class Block : MonoBehaviour
     [SerializeField] ParticleSystem enemy_killed_animation = null;
 
     public event Action onBeingHit;
+    public bool isMoving;
     private ShieldEffect shield;
     PlayerController pc;
 
@@ -67,6 +68,10 @@ public class Block : MonoBehaviour
         else if(onBeingHit != null) {
             onBeingHit();
             killSound.Play();
+            if(isMoving){
+                var contact = other.contacts[0].point;
+                enemy_killed_animation.transform.position = new Vector3(contact.x + 18.0f, contact.y, 0f); 
+            }
             enemy_killed_animation.Play();
             gameObject.SetActive(false);
         }
