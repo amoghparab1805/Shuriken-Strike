@@ -22,6 +22,13 @@ public class Block : MonoBehaviour
         if(onBeingHit != null && other.tag=="bullet") {
             onBeingHit();
             killSound.Play();
+            if(isMoving){
+                var contact = other.ClosestPoint(transform.position);
+                // var contact = other.contacts[0].point;
+                // Debug.Log("Contact Point: " + contact);
+                enemy_killed_animation.transform.position = new Vector3(contact.x + 18.0f, contact.y, 0f); 
+            }
+            enemy_killed_animation.Play();
             gameObject.SetActive(false);
         }
     }
