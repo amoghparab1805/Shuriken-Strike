@@ -1395,6 +1395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killSound: {fileID: 1740544485}
   enemy_killed_animation: {fileID: 192525738}
+  isMoving: 0
 --- !u!61 &588518576
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1794,7 +1795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &796882386
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3373,6 +3374,9 @@ MonoBehaviour:
   AddShotButton: {fileID: 576510003}
   HintButton: {fileID: 1625630110}
   startingPoint: {fileID: 2052888963}
+  startImage: {fileID: 0}
+  hereImage: {fileID: 0}
+  startArrow: {fileID: 0}
 --- !u!1 &1559219996
 GameObject:
   m_ObjectHideFlags: 0
