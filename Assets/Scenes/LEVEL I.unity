@@ -1436,7 +1436,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5f81bdff582c2fc4488e1129bc037245, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1917,7 +1917,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cef54599b6fa30478e116bd54c016e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerup_animation: {fileID: 0}
   inputData: {fileID: 11400000, guid: 996e94a672cdf4fc59c7ab70f1e8c779, type: 2}
   bm: {fileID: 0}
   gameObj: {fileID: 0}
@@ -2436,6 +2435,9 @@ MonoBehaviour:
   AddShotButton: {fileID: 2030880140}
   HintButton: {fileID: 261874995}
   startingPoint: {fileID: 2064740126}
+  startImage: {fileID: 0}
+  hereImage: {fileID: 0}
+  startArrow: {fileID: 0}
 --- !u!1 &1584594139
 GameObject:
   m_ObjectHideFlags: 0
@@ -2491,6 +2493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: -1
   rotateSpeed: 80
+  freeze_animation: {fileID: 0}
   FreezeButton: {fileID: 561673409}
 --- !u!61 &1584594142
 BoxCollider2D:
@@ -3053,6 +3056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: -1
   rotateSpeed: 80
+  freeze_animation: {fileID: 0}
   FreezeButton: {fileID: 0}
 --- !u!212 &2064740126
 SpriteRenderer:

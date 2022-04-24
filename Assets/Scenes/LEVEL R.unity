@@ -398,7 +398,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5f81bdff582c2fc4488e1129bc037245, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1455,7 +1455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2651a95a8d125824984ed5d049d099dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killSound: {fileID: 0}
+  killSound: {fileID: 29230759}
   enemy_killed_animation: {fileID: 1900008716}
   isMoving: 0
 --- !u!1 &635696932
@@ -1538,7 +1538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6807393260806313954, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6807393260806313954, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
       propertyPath: m_LocalScale.x
@@ -2425,7 +2425,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4642332973624995012, guid: b7aca6a9491444b19a91d7980d2a1e38, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4642332973624995012, guid: b7aca6a9491444b19a91d7980d2a1e38, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2496,7 +2496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1468804943
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2936,7 +2936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2651a95a8d125824984ed5d049d099dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killSound: {fileID: 0}
+  killSound: {fileID: 29230759}
   enemy_killed_animation: {fileID: 1442215829}
   isMoving: 0
 --- !u!1 &1603436293
@@ -3222,7 +3222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6807393260806313954, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6807393260806313954, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
       propertyPath: m_LocalScale.x
@@ -3436,7 +3436,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1685406031687011239, guid: 6f0b085d3972247ff9e5a5c8995ca2fb, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1685406031687011239, guid: 6f0b085d3972247ff9e5a5c8995ca2fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4081,7 +4081,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068889872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 437, y: 298, z: 0}
+  m_LocalPosition: {x: 632, y: 245, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []

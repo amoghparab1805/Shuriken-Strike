@@ -288,7 +288,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5f81bdff582c2fc4488e1129bc037245, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1537,7 +1537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2651a95a8d125824984ed5d049d099dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killSound: {fileID: 0}
+  killSound: {fileID: 29230759}
   enemy_killed_animation: {fileID: 600002822}
   isMoving: 0
 --- !u!1 &635696932
@@ -3137,7 +3137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2651a95a8d125824984ed5d049d099dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killSound: {fileID: 0}
+  killSound: {fileID: 29230759}
   enemy_killed_animation: {fileID: 926927715}
   isMoving: 0
 --- !u!1 &1603436293

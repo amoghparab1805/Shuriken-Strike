@@ -1535,6 +1535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killSound: {fileID: 1740544485}
   enemy_killed_animation: {fileID: 1034377177}
+  isMoving: 0
 --- !u!61 &558260629
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1814,6 +1815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killSound: {fileID: 1740544485}
   enemy_killed_animation: {fileID: 1339031303}
+  isMoving: 0
 --- !u!61 &588518576
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4324,7 +4326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052888961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 683, y: 219, z: 0}
+  m_LocalPosition: {x: 470, y: 125, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
