@@ -9,6 +9,7 @@ public class moveEnemyUpDown : MonoBehaviour
     public float speed = 1.0f;
     public Button FreezeButton;
     bool isFreezed;
+    [SerializeField] ParticleSystem freeze_animation = null;
     Rigidbody2D rigidbody;
     private Vector3 startPos;
 
@@ -38,5 +39,6 @@ public class moveEnemyUpDown : MonoBehaviour
     void freezeObjects()
     {
         isFreezed = true;
+        freeze_animation.Play();
     }
 }

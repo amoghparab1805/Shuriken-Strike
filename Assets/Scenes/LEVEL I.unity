@@ -1003,6 +1003,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: freeze-button
       objectReference: {fileID: 0}
+    - target: {fileID: 2472887328605093721, guid: c55031ee9c994447c873e2067fd65ac5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c55031ee9c994447c873e2067fd65ac5, type: 3}
 --- !u!224 &561673408 stripped
