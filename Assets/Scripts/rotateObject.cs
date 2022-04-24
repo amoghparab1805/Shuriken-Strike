@@ -8,6 +8,7 @@ public class rotateObject : MonoBehaviour
     
     public int angle = -1;
     public float rotateSpeed = 80f;
+    [SerializeField] ParticleSystem freeze_animation = null;
 
 
     public Button FreezeButton;
@@ -45,6 +46,7 @@ public class rotateObject : MonoBehaviour
     // }
     void freezeObjects()
     {
+        freeze_animation.Play();
         isFreezed = true;
     }
 }

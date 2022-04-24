@@ -362,7 +362,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4642332973624995012, guid: b7aca6a9491444b19a91d7980d2a1e38, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4642332973624995012, guid: b7aca6a9491444b19a91d7980d2a1e38, type: 3}
       propertyPath: m_LocalScale.x
@@ -1037,6 +1037,11 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!198 &537026237 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5715587338624069737, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+  m_PrefabInstance: {fileID: 5715587338087313108}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &566056761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,7 +1285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6807393260806313954, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6807393260806313954, guid: 06532f0c0e073442b8c4d131378fbd22, type: 3}
       propertyPath: m_LocalScale.x
@@ -1366,7 +1371,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4642332973624995012, guid: b7aca6a9491444b19a91d7980d2a1e38, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4642332973624995012, guid: b7aca6a9491444b19a91d7980d2a1e38, type: 3}
       propertyPath: m_LocalScale.x
@@ -1885,6 +1890,7 @@ MonoBehaviour:
   delta: 150
   speed: 1
   FreezeButton: {fileID: 741353008}
+  freeze_animation: {fileID: 537026237}
 --- !u!50 &1301193194
 Rigidbody2D:
   serializedVersion: 4
@@ -2017,7 +2023,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1468804943
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2315,6 +2321,7 @@ MonoBehaviour:
   delta: 150
   speed: 1
   FreezeButton: {fileID: 741353008}
+  freeze_animation: {fileID: 537026237}
 --- !u!1001 &1592826324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2792,6 +2799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: -1
   rotateSpeed: 80
+  freeze_animation: {fileID: 0}
   FreezeButton: {fileID: 0}
 --- !u!212 &2068889874
 SpriteRenderer:
@@ -3066,6 +3074,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c55031ee9c994447c873e2067fd65ac5, type: 3}
+--- !u!1001 &5715587338087313108
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 530
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 544
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.8644264
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069738, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715587338624069743, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
+      propertyPath: m_Name
+      value: freeze_animation
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c5cdd4171234a43e3a557700179fe4e9, type: 3}
 --- !u!1001 &7940854717822976737
 PrefabInstance:
   m_ObjectHideFlags: 0
