@@ -9,7 +9,7 @@ public class rotateObject : MonoBehaviour
     public int angle = -1;
     public float rotateSpeed = 80f;
     [SerializeField] ParticleSystem freeze_animation = null;
-
+    public AudioSource freezeSound;
 
     public Button FreezeButton;
     bool isFreezed;
@@ -46,6 +46,7 @@ public class rotateObject : MonoBehaviour
     // }
     void freezeObjects()
     {
+        freezeSound.Play();
         freeze_animation.Play();
         isFreezed = true;
     }
