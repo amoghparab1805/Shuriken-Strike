@@ -143,7 +143,7 @@ MonoBehaviour:
   delta: -50
   speed: 2
   FreezeButton: {fileID: 1046578797}
-  freeze_animation: {fileID: 1587869103}
+  freeze_animation: {fileID: 451063096}
   freezeSound: {fileID: 1974484479}
 --- !u!1001 &20037504
 PrefabInstance:
@@ -1227,7 +1227,7 @@ MonoBehaviour:
   delta: 120
   speed: 0.75
   FreezeButton: {fileID: 1046578797}
-  freeze_animation: {fileID: 1587869103}
+  freeze_animation: {fileID: 451063096}
   freezeSound: {fileID: 1974484479}
 --- !u!1 &573860437
 GameObject:
@@ -1673,7 +1673,7 @@ MonoBehaviour:
   delta: 120
   speed: 0.75
   FreezeButton: {fileID: 1046578797}
-  freeze_animation: {fileID: 1587869103}
+  freeze_animation: {fileID: 451063096}
   freezeSound: {fileID: 1974484479}
 --- !u!1 &879417729 stripped
 GameObject:
@@ -1695,7 +1695,7 @@ MonoBehaviour:
   delta: 50
   speed: 2
   FreezeButton: {fileID: 1046578797}
-  freeze_animation: {fileID: 1587869103}
+  freeze_animation: {fileID: 451063096}
   freezeSound: {fileID: 1974484479}
 --- !u!1 &885143973 stripped
 GameObject:
@@ -1717,7 +1717,7 @@ MonoBehaviour:
   delta: 50
   speed: 2
   FreezeButton: {fileID: 1046578797}
-  freeze_animation: {fileID: 1587869103}
+  freeze_animation: {fileID: 451063096}
   freezeSound: {fileID: 1974484479}
 --- !u!1 &895955635
 GameObject:
@@ -4417,7 +4417,7 @@ MonoBehaviour:
   delta: -50
   speed: 2
   FreezeButton: {fileID: 1046578797}
-  freeze_animation: {fileID: 1587869103}
+  freeze_animation: {fileID: 451063096}
   freezeSound: {fileID: 1974484479}
 --- !u!1 &1834478901
 GameObject:
@@ -4515,6 +4515,7 @@ RectTransform:
   - {fileID: 1103226714}
   - {fileID: 249589704}
   - {fileID: 1193477153}
+  - {fileID: 1384184658}
   - {fileID: 182861052}
   - {fileID: 2096419605}
   m_Father: {fileID: 0}
