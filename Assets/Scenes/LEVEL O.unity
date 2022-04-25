@@ -144,6 +144,7 @@ MonoBehaviour:
   speed: 2
   FreezeButton: {fileID: 1046578797}
   freeze_animation: {fileID: 1218533653}
+  freezeSound: {fileID: 0}
 --- !u!1001 &182861051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -368,6 +369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockArray: []
   winAmount: 10
+  freezeSound: {fileID: 0}
   animImg: {fileID: 526259835}
   anim: {fileID: 526259834}
 --- !u!1001 &387066955
@@ -1000,6 +1002,7 @@ MonoBehaviour:
   angle: -1
   rotateSpeed: 80
   freeze_animation: {fileID: 0}
+  freezeSound: {fileID: 0}
   FreezeButton: {fileID: 0}
 --- !u!212 &610563220
 SpriteRenderer:
@@ -1240,6 +1243,7 @@ MonoBehaviour:
   speed: 2
   FreezeButton: {fileID: 1046578797}
   freeze_animation: {fileID: 1218533653}
+  freezeSound: {fileID: 0}
 --- !u!1 &895955635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2883,7 +2887,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1692690912
 PrefabInstance:
@@ -3772,7 +3776,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1984112445786925796, guid: d56fa2c584e0c4a4c8417e0e9ebd3ff0, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1984112445786925796, guid: d56fa2c584e0c4a4c8417e0e9ebd3ff0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3817,6 +3821,10 @@ PrefabInstance:
     - target: {fileID: 1996024167096610214, guid: d56fa2c584e0c4a4c8417e0e9ebd3ff0, type: 3}
       propertyPath: m_Name
       value: powerup
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945270337220418999, guid: d56fa2c584e0c4a4c8417e0e9ebd3ff0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d56fa2c584e0c4a4c8417e0e9ebd3ff0, type: 3}
