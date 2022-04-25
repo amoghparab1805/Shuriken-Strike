@@ -666,6 +666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockArray: []
   winAmount: 25
+  freezeSound: {fileID: 0}
   animImg: {fileID: 719372475}
   anim: {fileID: 719372474}
 --- !u!1001 &338108581
@@ -1449,6 +1450,7 @@ MonoBehaviour:
   angle: -1
   rotateSpeed: 80
   freeze_animation: {fileID: 0}
+  freezeSound: {fileID: 0}
   FreezeButton: {fileID: 561673409}
 --- !u!61 &733619525
 BoxCollider2D:
@@ -2194,8 +2196,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104310592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 517, y: 282, z: 0}
-  m_LocalScale: {x: 76.246124, y: 76.246124, z: 76.246124}
+  m_LocalPosition: {x: 502.3687, y: 282, z: 0}
+  m_LocalScale: {x: 83.18156, y: 76.246124, z: 76.246124}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -2607,6 +2609,7 @@ MonoBehaviour:
   speed: 0.5
   FreezeButton: {fileID: 0}
   freeze_animation: {fileID: 0}
+  freezeSound: {fileID: 0}
 --- !u!1 &1584594139
 GameObject:
   m_ObjectHideFlags: 0
@@ -2663,6 +2666,7 @@ MonoBehaviour:
   angle: -1
   rotateSpeed: 80
   freeze_animation: {fileID: 0}
+  freezeSound: {fileID: 0}
   FreezeButton: {fileID: 561673409}
 --- !u!61 &1584594142
 BoxCollider2D:
@@ -3386,6 +3390,7 @@ MonoBehaviour:
   angle: -1
   rotateSpeed: 80
   freeze_animation: {fileID: 0}
+  freezeSound: {fileID: 0}
   FreezeButton: {fileID: 0}
 --- !u!212 &2064740126
 SpriteRenderer:
