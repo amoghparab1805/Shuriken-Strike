@@ -11,6 +11,7 @@ public class BlockManager : MonoBehaviour
     public Block[] blockArray;
     public int winAmount;
     AsyncOperation levelLoading;
+    public AudioSource freezeSound;
 
     public Image animImg;
     public Animator anim;

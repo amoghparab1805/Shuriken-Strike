@@ -13,6 +13,8 @@ public class moveEnemyUpDown : MonoBehaviour
     Rigidbody2D rigidbody;
     private Vector3 startPos;
 
+    public AudioSource freezeSound;
+
     void Start()
     {
         isFreezed = false;
@@ -38,6 +40,7 @@ public class moveEnemyUpDown : MonoBehaviour
 
     void freezeObjects()
     {
+        freezeSound.Play();
         isFreezed = true;
         freeze_animation.Play();
     }

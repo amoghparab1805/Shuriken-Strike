@@ -12,6 +12,7 @@ public class moveEnemy : MonoBehaviour
     bool isFreezed;
     [SerializeField] ParticleSystem freeze_animation = null;
     Rigidbody2D rigidbody;
+    public AudioSource freezeSound;
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class moveEnemy : MonoBehaviour
     }
     void freezeObjects()
     {
+        freezeSound.Play();
         isFreezed = true;
         freeze_animation.Play();
     }
